@@ -16,7 +16,7 @@ Each people earns a collector's culture card: three of its people before their h
 
 ## How to play
 
-- Walk with the arrow keys or WASD, or tap the map. Tap berries, water and trees to gather.
+- Tap the map to walk the king there; tap berries, water and trees to gather. Drag, or use the arrow keys or WASD, to look around; pinch or use the zoom buttons to zoom.
 - Press **Settle here** where the ground can sustain a camp.
 - Build a fire, then huts. Wanderers arrive.
 - At six people, form a council in the People tab and step back.
