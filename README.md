@@ -2,7 +2,7 @@
 
 A sandbox game of gathering, settling and growing a people, played in the browser.
 
-**Play:** https://markmak1967-web.github.io/valley/
+**Play:** https://markmak1967-web.github.io/Valley/
 
 You are a king who arrives alone on real ground (the first map is Plovdiv, Bulgaria, at 100 m to a tile). Light a fire, gather, build huts, and families will join you. Once a camp has six people, form a family council and it will run itself, shaped by the choices you make about rule, sharing and levy.
 
