@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Valley: a starter's guide</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;background:#14121b;color:#efe8dc;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.65}
+header{position:sticky;top:0;z-index:5;background:#1e1a28;border-bottom:1px solid #3a3348;padding:10px 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+header .brand{font-weight:700;letter-spacing:.06em;color:#e3c27f;font-size:18px}
+header nav{display:flex;gap:6px;flex-wrap:wrap;margin-left:auto}
+header nav a{color:#b4a993;text-decoration:none;font-size:13px;padding:4px 8px;border-radius:6px}
+header nav a:hover{background:#262133;color:#efe8dc}
+main{max-width:860px;margin:0 auto;padding:28px 20px 80px}
+h1{font-size:32px;margin:0 0 6px;line-height:1.2}
+h2{font-size:23px;color:#e3c27f;margin:48px 0 10px;padding-top:8px;border-top:1px solid #2c2638}
+h3{font-size:18px;margin:28px 0 6px}
+p{margin:0 0 14px}
+.lede{color:#b4a993;font-size:18px;margin-bottom:24px}
+blockquote{margin:20px 0;padding:14px 18px;border-left:3px solid #e3c27f;background:#1e1a28;font-size:19px}
+blockquote b{color:#e3c27f}
+figure{margin:18px 0 26px}
+figure img{display:block;max-width:100%;height:auto;border-radius:10px;border:1px solid #3a3348}
+figure.side{display:flex;gap:20px;align-items:flex-start}
+figure.side img{width:300px;flex:none}
+figure.side figcaption{margin:0}
+figcaption{color:#b4a993;font-size:14px;margin-top:8px}
+table{width:100%;border-collapse:collapse;margin:12px 0 20px;font-size:15px}
+th,td{text-align:left;vertical-align:top;padding:8px 10px;border-bottom:1px solid #2c2638}
+th{color:#b4a993;font-weight:500;font-size:13px}
+td:first-child{white-space:nowrap;color:#e3c27f}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0}
+.steps>li{counter-increment:s;position:relative;padding-left:46px;margin:0 0 18px}
+.steps>li::before{content:counter(s);position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;background:#e3c27f;color:#14121b;font-weight:700;display:flex;align-items:center;justify-content:center}
+.ic{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;border:1.5px solid #e3c27f;background:#1a1724;vertical-align:-7px;margin:0 2px}
+.ic svg{width:18px;height:18px}
+.tip{background:#262133;border-radius:10px;padding:14px 18px;margin:20px 0}
+.play{display:inline-block;margin-top:10px;background:#e3c27f;color:#14121b;text-decoration:none;font-weight:600;padding:10px 18px;border-radius:8px}
+@media(max-width:640px){header{position:static}header nav{margin-left:0}figure.side{flex-direction:column}figure.side img{width:100%}td:first-child{white-space:normal}h1{font-size:26px}}
+</style>
+</head>
+<body>
+<header><span class="brand">VALLEY</span><span style="color:#b4a993;font-size:14px">A starter's guide</span>
+<nav><a href="#what">What it is</a><a href="#screen">The screen</a><a href="#found">First camp</a><a href="#grow">Growing</a><a href="#council">Council</a><a href="#after">After</a><a href="index.html">Play</a></nav></header>
+<main>
+
+<h1>Valley: a starter's guide</h1>
+<p class="lede">How to found your first camp, grow it, and hand it to its own council.</p>
+
+<h2 id="what">What Valley is</h2>
+<p>You are a king with no land, standing on the Three Hills where Plovdiv will one day be. It is the Neolithic, the time before metal. There are berries on the bushes, a river across the plain, oak woods and pine on the heights, reeds by the water, and stone lying about. Nobody knows how to make anything beyond what their hands can gather.</p>
+<p>Valley has <b>no technology tree</b> to climb. Nothing is unlocked because a timer ran out or because you paid for it. Instead the game follows one rule:</p>
+<blockquote><b>Needs lead to ideas. Ideas lead to solutions</b>, in the form of objects and techniques.</blockquote>
+<p>When your people are cold, short of timber, tired of carrying loads, or fed well enough to want finer things, those needs push their spare time towards an answer. If stone lies everywhere and wood is scarce, they will work out how to pile dry-stone walls. If they carry heavy loads a long way, they will work out carrying straps, then yokes, then sleds or carts. Two peoples facing the same problem on different ground will solve it differently, and that is where their culture comes from.</p>
+<p>So the culture you end up with is a <b>consequence of the land and what its people needed</b>, not a set you pick from a menu. Their houses, tools, weapons, dress and beliefs are all built up from what was around them and what they had to solve. At any time the Card shows who they have become.</p>
+<figure><img src="guide/12-screen.jpg" alt="The Valley game screen with a camp on the map, the icon columns on both edges and a culture card on the right" loading="lazy"><figcaption>A camp a few years in: the map in the middle, icons on both edges, and the people's culture card on the right.</figcaption></figure>
+
+<h2 id="screen">Finding your way around the screen</h2>
+<p>The map fills the middle of the screen. Everything else opens and closes from round gold icons on its edges, so you can show as much or as little as you like.</p>
+<table>
+<tr><th>Where</th><th>What is there</th></tr>
+<tr><td>Top bar</td><td>The date and time of day, game speed (Pause, 1x, 3x, 5x, Skip season), counts for the whole realm, and Continue, Save and Load. The <b>?</b> button opens this guide.</td></tr>
+<tr><td>Stores band</td><td>Above the map: what the selected camp holds, such as food, water, wood and fibre. Red means short.</td></tr>
+<tr><td>Map</td><td>Drag to pan, scroll or pinch to zoom. Zooming only changes the view. The solid line is a camp's granted land and the dashed line is how far it reaches. <b>&minus;</b>, <b>+</b> and <b>Me</b> sit in the top-left corner.</td></tr>
+<tr><td>Left icons</td><td><b>Crown</b>: King settings and the realm overview. <b>Houses</b>: the Settlements list, with View cards. <b>Speech bubble</b>: Messages, the record of what has happened.</td></tr>
+<tr><td>Right icons</td><td><b>Person with an axe</b>: Work. <b>Oil lamp</b>: Ideas. <b>Roof frame</b>: Build. <b>Council round a fire</b>: Settings. <b>Two arrows</b>: Supply. <b>Portrait card</b>: Card.</td></tr>
+<tr><td>Commands</td><td>At the top of the right panel: <b>Mode</b> (Gather or Explore), <b>Settle here</b> or <b>Found camp here</b>, <b>New people here</b>, <b>Tower here</b>, <b>Outpost here</b>.</td></tr>
+</table>
+<p>Click an icon to open its panel, and click it again to close it. The open icon glows gold. With both sides closed the map fills the screen.</p>
+<p><b>Speed:</b> 1x is calm, and 5x is for when things are running themselves. <b>Skip season</b> fades the screen, runs to the next season or the next big event, and fades back in. The evening and night pass in a few seconds, because people sleep.</p>
+
+<h2 id="found">Founding your first camp, step by step</h2>
+<figure><img src="guide/01-start.jpg" alt="The opening view: the king on the Three Hills with a dotted outline showing the land a camp would be granted" loading="lazy"><figcaption>The opening view. The dotted outline follows you and shows the land a camp founded here would be granted. The stores band reads it out: tiles, how many it feeds, water and what else it holds.</figcaption></figure>
+<ol class="steps">
+<li><b>Walk the land.</b> You start in <b>Explore</b> mode, so taps on the map only walk you there. A dotted outline follows you. It shows the land a camp founded where you stand would be granted. The stores band tells you what that land holds: how many people it would feed, whether there is water, and what else lies inside it.</li>
+<li><b>Choose your ground.</b> A camp needs land that will <b>feed 8 people</b>, with <b>water</b> and <b>wood</b>. Reeds nearby give the fibre for huts. Stone, clay and mud nearby will matter later, because they decide what your people can build. Where you settle is the first choice that shapes their culture: a riverside people becomes a different people from a hill people.</li>
+<li><b>Press Settle here.</b> This becomes your <b>capital</b>, and its people are your first people. The solid line around it is its grant, which is fixed. The dashed line is its reach, which grows as the camp works further out.</li>
+<li><b>Gather.</b> You are now in <b>Gather</b> mode. Tap berries, the stream and trees to work them. The king walks over and works with the king's tool, then carries the load home. Loaded, people walk half as fast, so the distance from a resource to home matters.</li>
+<li><b>Light the fire (5 wood).</b> Open <b>Build</b> (the roof frame icon) and build the <b>Fire</b>. Nobody will stay with you until there is a fire.</li>
+<li><b>Build huts (10 wood and 4 fibre each, sleeping 3).</b> Wanderers only stay where there is room.</li>
+<li><b>Wanderers arrive.</b> At dawn, if there is room and enough food in store, a wanderer may join you. The <b>Next wanderer</b> line under <b>Work</b> tells you what is holding the next one back: no room, too little food, or not yet dawn.</li>
+</ol>
+<figure><img src="guide/02-settled.jpg" alt="The first camp just after settling, with its granted land outlined and the Work panel open on the right" loading="lazy"><figcaption>Just settled: the solid line is the camp's grant and the dashed line its reach.</figcaption></figure>
+<figure class="side"><img src="guide/03-build.jpg" alt="The Build panel listing Fire, Hut and Store with their costs" loading="lazy"><figcaption><b>Build</b> only lists what your people know how to make and can find materials for. More appears as ideas are worked out and new materials are handled.</figcaption></figure>
+<p>Keep gathering and building until you have <b>6 people</b>.</p>
+
+<h2 id="grow">Growing the camp</h2>
+<h3>Give people jobs</h3>
+<figure class="side"><img src="guide/04-work.jpg" alt="The Work panel with counts of adults, children and elders, the land, the next wanderer, and job rows with minus and plus buttons" loading="lazy"><figcaption>Until there is a council, you hand out the work yourself. A job only appears when its resource is inside your territory. Anyone without a job has free time.</figcaption></figure>
+<p>Open <b>Work</b> (the person with an axe). It shows how many adults, children and elders you have, then one row per job, each with <b>&minus;</b> and <b>+</b>: forager, water carrier, woodcutter, reed gatherer, stone worker and so on.</p>
+<p>A good start is one or two foragers, one water carrier and a woodcutter, with the rest free. Watch the stores band. Red food or water means move someone onto it.</p>
+
+<h3>Free time is where ideas come from</h3>
+<p>Ideas aren't bought. They are worked out in free time:</p>
+<ul>
+<li><b>By day</b>, people with no job tinker.</li>
+<li><b>In the evening</b>, everyone round the fire thinks, but only if there is light to work by.</li>
+<li>An idea needs three things: <b>a reason</b>, <b>the means</b> to try it, and <b>free time</b>. The reason is a need felt now, a reward for the maker, or curiosity fed by surplus.</li>
+</ul>
+<figure class="side"><img src="guide/05-ideas.jpg" alt="The Ideas panel showing an idea being perfected with a progress bar and plus button, and a list of ideas within reach" loading="lazy"><figcaption><b>What we're perfecting</b> shows the ideas in hand and why. <b>What we're talking about</b> lists ideas within reach that nobody has started. <b>What we know</b> lists everything worked out so far, and how.</figcaption></figure>
+
+<h3>Steer it with thinkers</h3>
+<p>You can't choose an idea out of nowhere, but you can push one along. Next to any idea already being perfected there is a <b>+</b>. Each <b>+</b> sets one spare person to think about that idea all day. This is how you shape the settlement: back the answers you want. The council keeps your thinkers in place until the idea is known.</p>
+
+<h3>Needs lead to solutions</h3>
+<table>
+<tr><th>The need</th><th>The idea</th><th>The solution</th></tr>
+<tr><td>Huts leak warmth in frost</td><td>Wattle and daub, or laying dry stone</td><td>Solid houses that hold 4 and stay warm</td></tr>
+<tr><td>Little timber, stone everywhere</td><td>Laying dry stone</td><td>Thick, low fieldstone walls that don't burn</td></tr>
+<tr><td>Heavy loads carried far</td><td>Carrying straps, then yokes</td><td>People haul more each trip</td></tr>
+<tr><td>A river in the way</td><td>Rafts, later plank boats</td><td>The far bank and what lies on it</td></tr>
+<tr><td>Food spoiling in store</td><td>Pots, and a kiln to fire them</td><td>Fired pots keep food</td></tr>
+</table>
+<p>A different camp, on different ground, would meet the same need another way. That is the point.</p>
+
+<h3>Watch for the frost</h3>
+<p>When the frost comes, berries and plots all but stop growing, huts leak warmth and the fire burns more wood. Messages will warn you a few days ahead. Store wood and food before winter, and get solid houses up as soon as your people know how to build them.</p>
+
+<h2 id="council">Handing the camp to a council</h2>
+<figure class="side"><img src="guide/06-family.jpg" alt="The Settings panel showing the Family council row with its Form button" loading="lazy"><figcaption>At 6 people, open <b>Settings</b> (the council round a fire) and press <b>Form</b> beside Family council.</figcaption></figure>
+<p>At <b>6 people</b> there is too much for one king to direct alone. Open <b>Settings</b> and form the <b>Family council</b>.</p>
+<p><b>What changes when the council takes over:</b></p>
+<ul>
+<li><b>The camp gets its real name.</b> It takes the name of the real village whose land it holds, from the official Bulgarian register, with the Bulgarian spelling beside it (for example Plovdiv, &#1055;&#1083;&#1086;&#1074;&#1076;&#1080;&#1074;). Camps founded later inside a named town's land keep plain names.</li>
+<li><b>The people get their name</b>, and their <b>culture card</b> begins.</li>
+<li><b>The council hands out the jobs.</b> Under Work, <b>Council runs the jobs</b> turns on. People move to whatever the camp is short of, and spare hands get free time.</li>
+<li><b>The council builds.</b> It puts up anything new to the best way it knows: a solid house before a hut, and tiles once it can fire them. It leaves what already stands alone.</li>
+</ul>
+<figure class="side"><img src="guide/07-council.jpg" alt="The Work panel after the council takes over, with the camp now named Plovdiv in Latin and Cyrillic and Council runs the jobs turned on" loading="lazy"><figcaption>After the handover: the camp is named after the real village whose land it holds, and the council runs the jobs.</figcaption></figure>
+<p><b>What the king keeps:</b></p>
+<table>
+<tr><th>You can still</th><th>Where</th></tr>
+<tr><td>Set thinkers on any idea in hand</td><td>Ideas, the <b>+</b> beside the idea</td></tr>
+<tr><td>Build anything yourself</td><td>Build, including the older kinds</td></tr>
+<tr><td>Take the jobs back</td><td>Work, switch off <b>Council runs the jobs</b></td></tr>
+<tr><td>Set this camp's rules</td><td>Settings: who decides (council or chief), how the store is shared, the levy, who may learn, whether knowledge is shared</td></tr>
+<tr><td>Set rules for many camps</td><td>The crown, King settings: the same rules for a whole people or the whole realm, kept as your defaults</td></tr>
+<tr><td>Order free exchange</td><td>Supply for one link, or the crown for a whole people or realm</td></tr>
+<tr><td>Grant the mandate to found</td><td>The crown: give or withdraw a people's right to found new camps on their own</td></tr>
+<tr><td>Go anywhere</td><td>The map, with Mode set to Explore or Gather</td></tr>
+</table>
+<figure class="side"><img src="guide/08-king.jpg" alt="The King settings panel with scope, rules for rule, sharing, levy, learning, ideas, supply and the mandate to found" loading="lazy"><figcaption>King settings, under the crown. Choose this people or the whole realm, then set the rules every council in that scope follows.</figcaption></figure>
+<p>The council doesn't take your choices away. It carries them out day to day, so you can step back and look at the bigger picture.</p>
+
+<h2 id="after">After the handover</h2>
+<p><b>Spread out.</b> Switch Mode to <b>Explore</b>, walk beyond the solid line and press <b>Found camp here</b>. The new camp keeps the same culture: it joins your people and grows from the camp nearest it. <b>Outpost here</b> puts a small work crew beside a resource on ground that can't feed a camp. Its parent camp carries food and water out to it.</p>
+<figure class="side"><img src="guide/09-settlements.jpg" alt="The Settlements panel with a View cards button and a table of camps" loading="lazy"><figcaption><b>Settlements</b>, under the houses icon: every camp with its people, population, days of food and what it is doing. Tap a row to open that camp.</figcaption></figure>
+<p><b>Start a different people.</b> <b>New people here</b> begins a new people with its own culture. You nurture it by hand, just as you did the first, until it has its own council. Then compare how the two turn out.</p>
+<p><b>Link camps.</b> Open <b>Supply</b> (the two arrows) to see every other camp. Each council decides what it sends and takes along each link: a camp short of food stops sending, a chief under strain hoards, and a camp that shares by rank only gives to its kin. You can leave it to the council or order <b>Free exchange</b> both ways, for one link or, under the crown, for a whole people or the whole realm. A camp that gives and gets nothing back loses trust, and camps that trade both ways grow closer. Links also carry ideas from camp to camp.</p>
+<figure class="side"><img src="guide/10-supply.jpg" alt="The Supply panel showing a neighbouring camp with Council decides and Free exchange buttons" loading="lazy"><figcaption><b>Supply</b>: what moves along each link, what each council has chosen and why, and the king's override.</figcaption></figure>
+<p><b>Watch the land and its dangers.</b> Fires, earthquakes and floods happen, and they change how people choose to build. A camp burned out may turn to stone, and one shaken by an earthquake may turn back to timber. Towers and forts, under the crown, are for watching the borders once you turn raiders on.</p>
+<p><b>Look at who they have become.</b> Open <b>Card</b> (the portrait card) for the selected camp's people. It shows their land, rule, travel, arms, craft and belief, with a picture drawn from what they actually use. Tap the card to read their story in their own words. <b>AI prompt</b> writes a detailed description you can paste into an image generator. <b>View cards</b>, in Settlements or under the card, turns through every people in this game.</p>
+<figure class="side"><img src="guide/11-card.jpg" alt="A culture card for the Hill People showing an elder, a woman and a warrior in front of their houses, with their traits below" loading="lazy"><figcaption>A culture card, drawn from what the people actually wear, build and carry. Tap it to read their story in their own words.</figcaption></figure>
+<p><b>Save and continue.</b> The game saves itself in your browser every few minutes and at each change of season. Next time you open it, press <b>Continue</b> in the top bar. <b>Save</b> also downloads the game as a file you can <b>Load</b> anywhere.</p>
+
+<div class="tip"><b>One last tip:</b> Don't rush. The game rewards watching what your people need and backing their answers. The culture you end up with is the story of that land and the choices made on it.</div>
+<a class="play" href="index.html">Play Valley</a>
+</main>
+</body>
+</html>
