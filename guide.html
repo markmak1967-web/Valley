@@ -3,159 +3,645 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Valley: a starter's guide</title>
+<title>Valley: the guide</title>
 <style>
 *{box-sizing:border-box}
 html,body{margin:0;background:#14121b;color:#efe8dc;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.65}
-header{position:sticky;top:0;z-index:5;background:#1e1a28;border-bottom:1px solid #3a3348;padding:10px 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+a{color:#e3c27f}
+header{position:sticky;top:0;z-index:6;background:#1e1a28;border-bottom:1px solid #3a3348;padding:10px 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 header .brand{font-weight:700;letter-spacing:.06em;color:#e3c27f;font-size:18px}
-header nav{display:flex;gap:6px;flex-wrap:wrap;margin-left:auto}
-header nav a{color:#b4a993;text-decoration:none;font-size:13px;padding:4px 8px;border-radius:6px}
-header nav a:hover{background:#262133;color:#efe8dc}
-main{max-width:860px;margin:0 auto;padding:28px 20px 80px}
+header .sub{color:#b4a993;font-size:14px}
+header input{margin-left:auto;background:#14121b;border:1px solid #3a3348;color:#efe8dc;border-radius:8px;padding:7px 10px;font-size:14px;width:240px;max-width:100%}
+header .play{margin:0;padding:7px 14px}
+.wrap{display:grid;grid-template-columns:250px 1fr;max-width:1240px;margin:0 auto}
+aside{position:sticky;top:58px;align-self:start;height:calc(100vh - 58px);overflow:auto;padding:18px 10px 40px 18px;border-right:1px solid #2c2638;font-size:14px}
+aside .grp{color:#b4a993;text-transform:uppercase;letter-spacing:.08em;font-size:11px;margin:16px 0 4px}
+aside a{display:block;color:#d8cfbf;text-decoration:none;padding:3px 8px;border-radius:6px}
+aside a:hover,aside a.on{background:#262133;color:#e3c27f}
+main{padding:24px 34px 90px;max-width:900px}
 h1{font-size:32px;margin:0 0 6px;line-height:1.2}
-h2{font-size:23px;color:#e3c27f;margin:48px 0 10px;padding-top:8px;border-top:1px solid #2c2638}
-h3{font-size:18px;margin:28px 0 6px}
+h2{font-size:24px;color:#e3c27f;margin:52px 0 10px;padding-top:10px;border-top:1px solid #2c2638}
+h3{font-size:18px;margin:26px 0 6px}
+h4{font-size:15px;margin:18px 0 4px;color:#d8cfbf}
 p{margin:0 0 14px}
+ul{margin:0 0 14px;padding-left:22px}li{margin:3px 0}
 .lede{color:#b4a993;font-size:18px;margin-bottom:24px}
 blockquote{margin:20px 0;padding:14px 18px;border-left:3px solid #e3c27f;background:#1e1a28;font-size:19px}
 blockquote b{color:#e3c27f}
 figure{margin:18px 0 26px}
 figure img{display:block;max-width:100%;height:auto;border-radius:10px;border:1px solid #3a3348}
 figure.side{display:flex;gap:20px;align-items:flex-start}
-figure.side img{width:300px;flex:none}
-figure.side figcaption{margin:0}
+figure.side img{width:290px;flex:none}
 figcaption{color:#b4a993;font-size:14px;margin-top:8px}
-table{width:100%;border-collapse:collapse;margin:12px 0 20px;font-size:15px}
-th,td{text-align:left;vertical-align:top;padding:8px 10px;border-bottom:1px solid #2c2638}
+figure.dia{background:#1a1724;border:1px solid #2c2638;border-radius:12px;padding:14px}
+figure.dia svg{display:block;width:100%;height:auto}
+table{width:100%;border-collapse:collapse;margin:10px 0 20px;font-size:15px}
+th,td{text-align:left;vertical-align:top;padding:7px 10px;border-bottom:1px solid #2c2638}
 th{color:#b4a993;font-weight:500;font-size:13px}
-td:first-child{white-space:nowrap;color:#e3c27f}
+td:first-child{color:#e3c27f}
 .steps{counter-reset:s;list-style:none;padding:0;margin:0}
-.steps>li{counter-increment:s;position:relative;padding-left:46px;margin:0 0 18px}
+.steps>li{counter-increment:s;position:relative;padding-left:46px;margin:0 0 16px}
 .steps>li::before{content:counter(s);position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;background:#e3c27f;color:#14121b;font-weight:700;display:flex;align-items:center;justify-content:center}
-.ic{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;border:1.5px solid #e3c27f;background:#1a1724;vertical-align:-7px;margin:0 2px}
-.ic svg{width:18px;height:18px}
-.tip{background:#262133;border-radius:10px;padding:14px 18px;margin:20px 0}
+.tip{background:#262133;border-radius:10px;padding:14px 18px;margin:18px 0}
+.tip b:first-child{color:#e3c27f}
+.box{border:1px solid #3a3348;border-radius:10px;padding:12px 16px;margin:14px 0}
+.kv{display:inline-block;background:#262133;border-radius:6px;padding:1px 8px;font-size:13px;color:#e3c27f;margin:0 2px}
 .play{display:inline-block;margin-top:10px;background:#e3c27f;color:#14121b;text-decoration:none;font-weight:600;padding:10px 18px;border-radius:8px}
-@media(max-width:640px){header{position:static}header nav{margin-left:0}figure.side{flex-direction:column}figure.side img{width:100%}td:first-child{white-space:normal}h1{font-size:26px}}
+section.hide{display:none}
+.nohit{display:none;color:#b4a993;margin-top:30px}
+@media(max-width:860px){.wrap{grid-template-columns:1fr}aside{position:static;height:auto;border-right:0;border-bottom:1px solid #2c2638;columns:2}main{padding:20px 18px 80px}figure.side{flex-direction:column}figure.side img{width:100%}header input{margin-left:0;width:100%}}
 </style>
 </head>
 <body>
-<header><span class="brand">VALLEY</span><span style="color:#b4a993;font-size:14px">A starter's guide</span>
-<nav><a href="#what">What it is</a><a href="#screen">The screen</a><a href="#found">First camp</a><a href="#grow">Growing</a><a href="#council">Council</a><a href="#after">After</a><a href="index.html">Play</a></nav></header>
-<main>
+<header><span class="brand">VALLEY</span><span class="sub">The guide</span><input id="q" type="search" placeholder="Search the guide (e.g. levy, favour, relief)"><a class="play" href="index.html">Play</a></header>
+<div class="wrap">
+<aside id="toc">
+ <div class="grp">Start here</div>
+ <a href="#what">What Valley is</a>
+ <a href="#rules">The rules of the world</a>
+ <a href="#screen">The screen</a>
+ <a href="#start">Your first camp</a>
+ <a href="#council">Handing over to a council</a>
+ <div class="grp">A camp's panels</div>
+ <a href="#work">Work</a>
+ <a href="#ideas">Ideas</a>
+ <a href="#build">Build</a>
+ <a href="#settings">Settings</a>
+ <a href="#supply">Supply</a>
+ <a href="#card">Card</a>
+ <a href="#crownhand">From the crown</a>
+ <div class="grp">The realm</div>
+ <a href="#commands">King's commands</a>
+ <a href="#king">King settings</a>
+ <a href="#settlements">Settlements</a>
+ <a href="#messages">Messages and the chronicle</a>
+ <a href="#loyalty">Loyalty</a>
+ <a href="#grievance">Bad blood (grievance)</a>
+ <a href="#tension">Tension and splits</a>
+ <a href="#tax">Tax, the royal store and the bank</a>
+ <div class="grp">War</div>
+ <a href="#war">The War tab</a>
+ <a href="#forces">Levies, soldiers and forts</a>
+ <a href="#fight">How a fight is decided</a>
+ <a href="#civil">Civil war</a>
+ <div class="grp">Strangers</div>
+ <a href="#bands">Raider bands</a>
+ <a href="#settled">Settled strangers</a>
+ <a href="#favour">Trade, favour and joining</a>
+ <a href="#land">Land hunger</a>
+ <div class="grp">The long game</div>
+ <a href="#seasons">Seasons and disasters</a>
+ <a href="#endings">Endings</a>
+ <a href="#saving">Saving and loading</a>
+ <a href="#glossary">Glossary</a>
+</aside>
+<main id="main">
+<h1>Valley: the guide</h1>
+<p class="lede">How the valley works, what every button does, and why things happen. Use the index on the left or search above.</p>
+<p class="nohit" id="nohit">Nothing in the guide matches that search.</p>
 
-<h1>Valley: a starter's guide</h1>
-<p class="lede">How to found your first camp, grow it, and hand it to its own council.</p>
-
-<h2 id="what">What Valley is</h2>
+<section id="what">
+<h2>What Valley is</h2>
 <p>You are a king with no land, standing on the Three Hills where Plovdiv will one day be. It is the Neolithic, the time before metal. There are berries on the bushes, a river across the plain, oak woods and pine on the heights, reeds by the water, and stone lying about. Nobody knows how to make anything beyond what their hands can gather.</p>
-<p>Valley has <b>no technology tree</b> to climb. Nothing is unlocked because a timer ran out or because you paid for it. Instead the game follows one rule:</p>
+<p>Valley has <b>no technology tree</b>, <b>no score</b> and <b>no ages to reach</b>. Nothing is unlocked because a timer ran out or because you paid for it. One rule runs everything:</p>
 <blockquote><b>Needs lead to ideas. Ideas lead to solutions</b>, in the form of objects and techniques.</blockquote>
-<p>When your people are cold, short of timber, tired of carrying loads, or fed well enough to want finer things, those needs push their spare time towards an answer. If stone lies everywhere and wood is scarce, they will work out how to pile dry-stone walls. If they carry heavy loads a long way, they will work out carrying straps, then yokes, then sleds or carts. Two peoples facing the same problem on different ground will solve it differently, and that is where their culture comes from.</p>
-<p>So the culture you end up with is a <b>consequence of the land and what its people needed</b>, not a set you pick from a menu. Their houses, tools, weapons, dress and beliefs are all built up from what was around them and what they had to solve. At any time the Card shows who they have become.</p>
-<figure><img src="guide/12-screen.jpg" alt="The Valley game screen with a camp on the map, the icon columns on both edges and a culture card on the right" loading="lazy"><figcaption>A camp a few years in: the map in the middle, icons on both edges, and the people's culture card on the right.</figcaption></figure>
+<figure class="dia"><svg viewBox="0 0 760 210" role="img" aria-label="The core loop: land and environment create needs; needs and free time produce ideas; ideas become solutions; solutions change the land and the culture, which creates new needs">
+<defs><marker id="ah" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#e3c27f"/></marker></defs>
+<g font-family="Inter,system-ui,sans-serif" font-size="14" fill="#efe8dc" text-anchor="middle">
+<rect x="10" y="70" width="140" height="64" rx="12" fill="#262133" stroke="#3a3348"/><text x="80" y="98" font-weight="700">The land</text><text x="80" y="118" font-size="12" fill="#b4a993">what lies around</text>
+<rect x="200" y="70" width="140" height="64" rx="12" fill="#262133" stroke="#3a3348"/><text x="270" y="98" font-weight="700">Needs</text><text x="270" y="118" font-size="12" fill="#b4a993">cold, hunger, loads</text>
+<rect x="390" y="70" width="140" height="64" rx="12" fill="#262133" stroke="#e3c27f"/><text x="460" y="98" font-weight="700" fill="#e3c27f">Ideas</text><text x="460" y="118" font-size="12" fill="#b4a993">worked out in free time</text>
+<rect x="580" y="70" width="160" height="64" rx="12" fill="#262133" stroke="#3a3348"/><text x="660" y="98" font-weight="700">Solutions</text><text x="660" y="118" font-size="12" fill="#b4a993">objects and techniques</text>
+<path d="M150 102 H196" stroke="#e3c27f" stroke-width="2" marker-end="url(#ah)"/><path d="M340 102 H386" stroke="#e3c27f" stroke-width="2" marker-end="url(#ah)"/><path d="M530 102 H576" stroke="#e3c27f" stroke-width="2" marker-end="url(#ah)"/>
+<path d="M660 134 V180 H80 V138" fill="none" stroke="#e3c27f" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#ah)"/>
+<text x="370" y="198" font-size="13" fill="#b4a993">who they become: the culture card, and the next round of needs</text>
+<text x="460" y="52" font-size="12" fill="#b4a993">needs a reason, the means, and free time</text>
+</g></svg><figcaption>The loop behind everything. Two peoples on different ground meet the same need in different ways, and that is where culture comes from.</figcaption></figure>
+<p>So the culture you end up with is a <b>consequence of the land and what its people needed</b>, not a set you pick from a menu. Their houses, tools, weapons, dress and beliefs all grow from what was around them and what they had to solve.</p>
+<figure><img src="guide/12-screen.jpg" alt="The Valley game screen with a camp on the map, the icon columns on both edges and a culture card on the right" loading="lazy"><figcaption>A camp a few years in.</figcaption></figure>
+</section>
 
-<h2 id="screen">Finding your way around the screen</h2>
-<p>The map fills the middle of the screen. Everything else opens and closes from round gold icons on its edges, so you can show as much or as little as you like.</p>
+<section id="rules">
+<h2>The rules of the world</h2>
+<p>These hold everywhere in the game and explain most of what you will see.</p>
 <table>
-<tr><th>Where</th><th>What is there</th></tr>
-<tr><td>Top bar</td><td>The date and time of day, game speed (Pause, 1x, 3x, 5x, Skip season), counts for the whole realm, and Continue, Save and Load. The <b>?</b> button opens this guide.</td></tr>
-<tr><td>Stores band</td><td>Above the map: what the selected camp holds, such as food, water, wood and fibre. Red means short.</td></tr>
-<tr><td>Map</td><td>Drag to pan, scroll or pinch to zoom. Zooming only changes the view. The solid line is a camp's granted land and the dashed line is how far it reaches. <b>&minus;</b>, <b>+</b> and <b>Me</b> sit in the top-left corner.</td></tr>
-<tr><td>Left icons</td><td><b>Crown</b>: King settings and the realm overview. <b>Houses</b>: the Settlements list, with View cards. <b>Speech bubble</b>: Messages, the record of what has happened.</td></tr>
-<tr><td>Right icons</td><td><b>Person with an axe</b>: Work. <b>Oil lamp</b>: Ideas. <b>Roof frame</b>: Build. <b>Council round a fire</b>: Settings. <b>Two arrows</b>: Supply. <b>Portrait card</b>: Card.</td></tr>
-<tr><td>Commands</td><td>At the top of the right panel: <b>Mode</b> (Gather or Explore), <b>Settle here</b> or <b>Found camp here</b>, <b>New people here</b>, <b>Tower here</b>, <b>Outpost here</b>.</td></tr>
+<tr><th>Rule</th><th>What it means in play</th></tr>
+<tr><td>No cheats</td><td>Everything is decided by what exists at that moment: the people, the stores, the ground, the weather. Nothing is conjured. Even the crown's gifts come out of real stores or real tokens.</td></tr>
+<tr><td>Knowledge is seen, not given</td><td>You learn about strangers only when someone sees them. A raider leader's name is learned from the fallen after a fight.</td></tr>
+<tr><td>Councils decide</td><td>Once a camp has a council, it runs its own jobs, building and supply. You set rules and can override some things, but the camp acts on its own needs.</td></tr>
+<tr><td>Free time makes ideas</td><td>People out of work by day, and everyone in the evening lamplight, think. No free time, no ideas.</td></tr>
+<tr><td>Distance matters</td><td>Loaded people walk at half speed. Far camps feel the crown less, and help takes time to arrive.</td></tr>
+<tr><td>Saves are kept</td><td>New features are added as optional data, so older saves still load.</td></tr>
 </table>
-<p>Click an icon to open its panel, and click it again to close it. The open icon glows gold. With both sides closed the map fills the screen.</p>
-<p><b>Speed:</b> 1x is calm, and 5x is for when things are running themselves. <b>Skip season</b> fades the screen, runs to the next season or the next big event, and fades back in. The evening and night pass in a few seconds, because people sleep.</p>
+<p><b>Time:</b> a year has four seasons of 12 days each, so 48 days. Evenings and nights pass quickly because people sleep.</p>
+</section>
 
-<h2 id="found">Founding your first camp, step by step</h2>
-<figure><img src="guide/01-start.jpg" alt="The opening view: the king on the Three Hills with a dotted outline showing the land a camp would be granted" loading="lazy"><figcaption>The opening view. The dotted outline follows you and shows the land a camp founded here would be granted. The stores band reads it out: tiles, how many it feeds, water and what else it holds.</figcaption></figure>
+<section id="screen">
+<h2>The screen</h2>
+<p>The map fills the middle. Everything else opens and closes from round gold icons on its edges. Click an icon to open its panel; click it again to close it. On each side only one panel is open at a time.</p>
+<figure class="dia"><svg viewBox="0 0 760 360" role="img" aria-label="Screen layout: top bar across the top; left edge icons King, Settlements, Messages and War; the map in the centre with the stores band above it; right edge icons Work, Ideas, Build, Settings, Supply and Card with the king's commands at the top of the right panel">
+<g font-family="Inter,system-ui,sans-serif" font-size="13" fill="#efe8dc">
+<rect x="10" y="10" width="740" height="36" rx="6" fill="#262133" stroke="#3a3348"/>
+<text x="22" y="33">Date · Pause 1x 3x 5x Skip season · realm counts</text><text x="560" y="33">Continue Save Load ?</text>
+<rect x="10" y="56" width="170" height="294" rx="6" fill="#1e1a28" stroke="#3a3348"/>
+<text x="95" y="76" text-anchor="middle" fill="#b4a993" font-size="12">LEFT PANEL (the realm)</text>
+<g fill="#e3c27f"><circle cx="196" cy="100" r="11"/><circle cx="196" cy="130" r="11"/><circle cx="196" cy="160" r="11"/><circle cx="196" cy="190" r="11"/></g>
+<g font-size="12"><text x="24" y="104">King: crown</text><text x="24" y="134">Settlements: houses</text><text x="24" y="164">Messages: speech</text><text x="24" y="194">War: crossed swords</text></g>
+<rect x="216" y="56" width="328" height="26" rx="5" fill="#262133" stroke="#3a3348"/><text x="380" y="74" text-anchor="middle" font-size="12">Stores band: what the selected camp holds</text>
+<rect x="216" y="88" width="328" height="262" rx="6" fill="#20301f" stroke="#3a3348"/>
+<text x="380" y="200" text-anchor="middle" fill="#cfe0c0">MAP</text><text x="380" y="220" text-anchor="middle" font-size="12" fill="#b4c7a8">drag to pan, scroll or pinch to zoom</text>
+<text x="226" y="106" font-size="12" fill="#b4c7a8">− + Me</text>
+<g fill="#e3c27f"><circle cx="562" cy="100" r="11"/><circle cx="562" cy="130" r="11"/><circle cx="562" cy="160" r="11"/><circle cx="562" cy="190" r="11"/><circle cx="562" cy="220" r="11"/><circle cx="562" cy="250" r="11"/></g>
+<rect x="580" y="56" width="170" height="294" rx="6" fill="#1e1a28" stroke="#3a3348"/>
+<text x="665" y="76" text-anchor="middle" fill="#b4a993" font-size="12">RIGHT PANEL (a camp)</text>
+<g font-size="12"><text x="592" y="104">Work: person + tool</text><text x="592" y="134">Ideas: oil lamp</text><text x="592" y="164">Build: roof frame</text><text x="592" y="194">Settings: council</text><text x="592" y="224">Supply: two arrows</text><text x="592" y="254">Card: portrait</text></g>
+<rect x="590" y="282" width="150" height="56" rx="6" fill="#262133" stroke="#e3c27f"/><text x="665" y="302" text-anchor="middle" font-size="12" fill="#e3c27f">King's commands</text><text x="665" y="320" text-anchor="middle" font-size="11" fill="#b4a993">at the top of the panel</text>
+</g></svg><figcaption>Where everything lives. The left side is about the whole realm; the right side is about the camp you have selected.</figcaption></figure>
+<table>
+<tr><th>Where</th><th>Button</th><th>What it does</th></tr>
+<tr><td>Top bar</td><td>Pause, 1x, 3x, 5x</td><td>Game speed. 5x is for when things run themselves.</td></tr>
+<tr><td>Top bar</td><td>Skip season</td><td>Fades out, runs to the next season or the next important event (a battle, a disaster, a people forming, a war, an ending), and fades back in.</td></tr>
+<tr><td>Top bar</td><td>Continue</td><td>Picks up the game saved automatically in this browser.</td></tr>
+<tr><td>Top bar</td><td>Save / Load</td><td>Downloads the game as a file, or loads one.</td></tr>
+<tr><td>Top bar</td><td>?</td><td>Opens this guide in a new tab.</td></tr>
+<tr><td>Map corner</td><td>−, +, Me</td><td>Zoom out, zoom in, and centre on the king.</td></tr>
+<tr><td>Map</td><td>Solid and dashed lines</td><td>The solid line is a camp's granted land, which is fixed. The dashed line is how far it reaches to work, which grows.</td></tr>
+<tr><td>Stores band</td><td>Red numbers</td><td>That store is short.</td></tr>
+</table>
+</section>
+
+<section id="start">
+<h2>Your first camp</h2>
+<figure><img src="guide/01-start.jpg" alt="The opening view: the king on the Three Hills with a dotted outline showing the land a camp would be granted" loading="lazy"><figcaption>The dotted outline follows you and shows the land a camp founded where you stand would be granted. The stores band reads out what it holds.</figcaption></figure>
 <ol class="steps">
-<li><b>Walk the land.</b> You start in <b>Explore</b> mode, so taps on the map only walk you there. A dotted outline follows you. It shows the land a camp founded where you stand would be granted. The stores band tells you what that land holds: how many people it would feed, whether there is water, and what else lies inside it.</li>
-<li><b>Choose your ground.</b> A camp needs land that will <b>feed 8 people</b>, with <b>water</b> and <b>wood</b>. Reeds nearby give the fibre for huts. Stone, clay and mud nearby will matter later, because they decide what your people can build. Where you settle is the first choice that shapes their culture: a riverside people becomes a different people from a hill people.</li>
-<li><b>Press Settle here.</b> This becomes your <b>capital</b>, and its people are your first people. The solid line around it is its grant, which is fixed. The dashed line is its reach, which grows as the camp works further out.</li>
-<li><b>Gather.</b> You are now in <b>Gather</b> mode. Tap berries, the stream and trees to work them. The king walks over and works with the king's tool, then carries the load home. Loaded, people walk half as fast, so the distance from a resource to home matters.</li>
-<li><b>Light the fire (5 wood).</b> Open <b>Build</b> (the roof frame icon) and build the <b>Fire</b>. Nobody will stay with you until there is a fire.</li>
-<li><b>Build huts (10 wood and 4 fibre each, sleeping 3).</b> Wanderers only stay where there is room.</li>
-<li><b>Wanderers arrive.</b> At dawn, if there is room and enough food in store, a wanderer may join you. The <b>Next wanderer</b> line under <b>Work</b> tells you what is holding the next one back: no room, too little food, or not yet dawn.</li>
+<li><b>Walk the land.</b> You start in <b>Explore</b> mode: taps on the map walk you there.</li>
+<li><b>Choose your ground.</b> A camp needs land that will <b>feed 8 people</b>, with <b>water</b> and <b>wood</b>. Reeds give fibre for huts. Stone, clay and mud nearby decide what your people can build later. Where you settle is the first choice that shapes their culture.</li>
+<li><b>Press Settle here.</b> This becomes your <b>capital</b> (your seat), and its people are your first people.</li>
+<li><b>Gather.</b> Mode switches to <b>Gather</b>. Tap berries, water or trees: the king walks over, works with the king's tool, and carries the load home.</li>
+<li><b>Build the Fire (5 wood)</b> in <b>Build</b>. Nobody stays without a fire.</li>
+<li><b>Build huts (10 wood and 4 fibre each; each sleeps 3).</b> Wanderers only stay where there is room.</li>
+<li><b>Wanderers arrive at dawn</b> if there is room and food. <b>Next wanderer</b> under Work says what is holding the next one back.</li>
+<li><b>At 6 people, form the council</b> (next section).</li>
 </ol>
-<figure><img src="guide/02-settled.jpg" alt="The first camp just after settling, with its granted land outlined and the Work panel open on the right" loading="lazy"><figcaption>Just settled: the solid line is the camp's grant and the dashed line its reach.</figcaption></figure>
-<figure class="side"><img src="guide/03-build.jpg" alt="The Build panel listing Fire, Hut and Store with their costs" loading="lazy"><figcaption><b>Build</b> only lists what your people know how to make and can find materials for. More appears as ideas are worked out and new materials are handled.</figcaption></figure>
-<p>Keep gathering and building until you have <b>6 people</b>.</p>
+<figure class="side"><img src="guide/02-settled.jpg" alt="The first camp just after settling" loading="lazy"><figcaption>Just settled: the solid line is the grant, the dashed line the reach.</figcaption></figure>
+</section>
 
-<h2 id="grow">Growing the camp</h2>
-<h3>Give people jobs</h3>
-<figure class="side"><img src="guide/04-work.jpg" alt="The Work panel with counts of adults, children and elders, the land, the next wanderer, and job rows with minus and plus buttons" loading="lazy"><figcaption>Until there is a council, you hand out the work yourself. A job only appears when its resource is inside your territory. Anyone without a job has free time.</figcaption></figure>
-<p>Open <b>Work</b> (the person with an axe). It shows how many adults, children and elders you have, then one row per job, each with <b>&minus;</b> and <b>+</b>: forager, water carrier, woodcutter, reed gatherer, stone worker and so on.</p>
-<p>A good start is one or two foragers, one water carrier and a woodcutter, with the rest free. Watch the stores band. Red food or water means move someone onto it.</p>
-
-<h3>Free time is where ideas come from</h3>
-<p>Ideas aren't bought. They are worked out in free time:</p>
+<section id="council">
+<h2>Handing over to a council</h2>
+<figure class="side"><img src="guide/06-family.jpg" alt="The Settings panel showing the Family council row with its Form button" loading="lazy"><figcaption>At 6 people, open <b>Settings</b> and press <b>Form</b> beside Family council.</figcaption></figure>
+<p>When the council forms:</p>
 <ul>
-<li><b>By day</b>, people with no job tinker.</li>
-<li><b>In the evening</b>, everyone round the fire thinks, but only if there is light to work by.</li>
-<li>An idea needs three things: <b>a reason</b>, <b>the means</b> to try it, and <b>free time</b>. The reason is a need felt now, a reward for the maker, or curiosity fed by surplus.</li>
+<li><b>The camp gets its real name</b> from the Bulgarian register of the village whose land it holds (for example Plovdiv, &#1055;&#1083;&#1086;&#1074;&#1076;&#1080;&#1074;). You can rename it later with the pencil beside its name. Renaming the capital renames its people.</li>
+<li><b>The people get their name</b> and their <b>culture card</b> begins.</li>
+<li><b>The council runs the jobs</b> and <b>builds</b> to the best way it knows, and decides its own <b>supply</b>.</li>
 </ul>
-<figure class="side"><img src="guide/05-ideas.jpg" alt="The Ideas panel showing an idea being perfected with a progress bar and plus button, and a list of ideas within reach" loading="lazy"><figcaption><b>What we're perfecting</b> shows the ideas in hand and why. <b>What we're talking about</b> lists ideas within reach that nobody has started. <b>What we know</b> lists everything worked out so far, and how.</figcaption></figure>
+<p>You keep: thinkers on ideas, building yourself, taking the jobs back, the camp's rules, the realm's rules, supply overrides, the mandate to found, and the crown's help.</p>
+<figure class="side"><img src="guide/07-council.jpg" alt="The Work panel after the council takes over" loading="lazy"><figcaption>After the handover the council runs the jobs.</figcaption></figure>
+</section>
 
-<h3>Steer it with thinkers</h3>
-<p>You can't choose an idea out of nowhere, but you can push one along. Next to any idea already being perfected there is a <b>+</b>. Each <b>+</b> sets one spare person to think about that idea all day. This is how you shape the settlement: back the answers you want. The council keeps your thinkers in place until the idea is known.</p>
-
-<h3>Needs lead to solutions</h3>
+<section id="work">
+<h2>Work (person with a tool)</h2>
+<figure class="side"><img src="guide/04-work.jpg" alt="The Work panel with job rows and minus and plus buttons" loading="lazy"><figcaption>One row per job, with − and +.</figcaption></figure>
 <table>
-<tr><th>The need</th><th>The idea</th><th>The solution</th></tr>
-<tr><td>Huts leak warmth in frost</td><td>Wattle and daub, or laying dry stone</td><td>Solid houses that hold 4 and stay warm</td></tr>
-<tr><td>Little timber, stone everywhere</td><td>Laying dry stone</td><td>Thick, low fieldstone walls that don't burn</td></tr>
-<tr><td>Heavy loads carried far</td><td>Carrying straps, then yokes</td><td>People haul more each trip</td></tr>
-<tr><td>A river in the way</td><td>Rafts, later plank boats</td><td>The far bank and what lies on it</td></tr>
-<tr><td>Food spoiling in store</td><td>Pots, and a kiln to fire them</td><td>Fired pots keep food</td></tr>
+<tr><th>Item</th><th>What it does</th></tr>
+<tr><td>Adults, children, elders</td><td>Who lives in the camp. Only adults work and fight.</td></tr>
+<tr><td>Next wanderer</td><td>What is holding back the next arrival: no room, too little food, or not yet dawn.</td></tr>
+<tr><td>Job rows, − and +</td><td>Move people on or off a job (forager, water carrier, woodcutter, reed gatherer, stone worker, hunter, ore gatherer and so on). A job only appears when its resource is <b>visible inside the camp's land</b>. Anyone without a job has free time.</td></tr>
+<tr><td>Council runs the jobs</td><td>On: the council moves people to whatever is short. Off: you place them yourself.</td></tr>
+<tr><td>Thinker</td><td>A person set to think all day about an idea already being perfected (set from Ideas).</td></tr>
 </table>
-<p>A different camp, on different ground, would meet the same need another way. That is the point.</p>
+<div class="tip"><b>Tip:</b> red food or water in the stores band means move someone onto it.</div>
+</section>
 
-<h3>Watch for the frost</h3>
-<p>When the frost comes, berries and plots all but stop growing, huts leak warmth and the fire burns more wood. Messages will warn you a few days ahead. Store wood and food before winter, and get solid houses up as soon as your people know how to build them.</p>
+<section id="ideas">
+<h2>Ideas (oil lamp)</h2>
+<figure class="side"><img src="guide/05-ideas.jpg" alt="The Ideas panel" loading="lazy"><figcaption>Ideas in hand, ideas being talked about, and what is known.</figcaption></figure>
+<p>An idea needs <b>a reason</b> (a need felt now, a reward for the maker, or curiosity fed by surplus), <b>the means</b> to try it (the right materials to hand), and <b>free time</b> (people out of work by day, and everyone in the evening if there is light).</p>
+<table>
+<tr><th>Section</th><th>What it shows</th></tr>
+<tr><td>What we're perfecting</td><td>Ideas in hand, why, and progress. <b>+</b> and <b>−</b> add or remove a thinker: a spare person who thinks about it all day. This is how you steer a camp.</td></tr>
+<tr><td>What we're talking about</td><td>Ideas within reach that nobody has started.</td></tr>
+<tr><td>What we know</td><td>Everything worked out, and how. Ideas also travel along supply links to other camps, if sharing allows.</td></tr>
+</table>
+<table>
+<tr><th>The need</th><th>An idea that may follow</th><th>The solution</th></tr>
+<tr><td>Huts leak warmth in frost</td><td>Wattle and daub, or laying dry stone</td><td>Solid houses that hold 4</td></tr>
+<tr><td>Little timber, stone everywhere</td><td>Laying dry stone</td><td>Low fieldstone walls that don't burn</td></tr>
+<tr><td>Heavy loads carried far</td><td>Carrying straps, then yokes</td><td>More per trip</td></tr>
+<tr><td>A river in the way</td><td>Rafts, later boats</td><td>The far bank</td></tr>
+<tr><td>Food spoiling</td><td>Pots, then a kiln</td><td>Fired pots keep food</td></tr>
+</table>
+</section>
 
-<h2 id="council">Handing the camp to a council</h2>
-<figure class="side"><img src="guide/06-family.jpg" alt="The Settings panel showing the Family council row with its Form button" loading="lazy"><figcaption>At 6 people, open <b>Settings</b> (the council round a fire) and press <b>Form</b> beside Family council.</figcaption></figure>
-<p>At <b>6 people</b> there is too much for one king to direct alone. Open <b>Settings</b> and form the <b>Family council</b>.</p>
-<p><b>What changes when the council takes over:</b></p>
+<section id="build">
+<h2>Build (roof frame)</h2>
+<figure class="side"><img src="guide/03-build.jpg" alt="The Build panel" loading="lazy"><figcaption>Only what your people know how to make, with the materials at hand.</figcaption></figure>
+<p>Each entry shows its cost. The list grows as ideas are worked out and new materials are handled: fire, huts, stores, houses (the best wall your people know: wattle, dry stone and others), drying racks, kilns, plots, wells, towers and forts. A council builds on its own; you can still build anything yourself, including older kinds.</p>
+<p><b>Forts</b> matter for war: a fort is where levies muster and where the standing army stands. <b>Towers</b> watch the land around them for raiders.</p>
+</section>
+
+<section id="settings">
+<h2>Settings (council round a fire)</h2>
+<table>
+<tr><th>Setting</th><th>Choices and effect</th></tr>
+<tr><td>Family council</td><td><b>Form</b> at 6 people: the camp starts governing itself.</td></tr>
+<tr><td>Who decides</td><td><b>Council</b> or <b>chief</b>. A chief acts faster and harder: hoards under strain, and in tension may take from neighbours by threat. A chief-led camp is less loyal to the crown.</td></tr>
+<tr><td>Sharing the store</td><td>How food and goods are shared inside the camp (for example to all, or by rank and kin). It shapes who sends what along supply links.</td></tr>
+<tr><td>Levy</td><td>The share of adults this camp owes when the crown calls (none, 1 in 10, 1 in 5 and so on). The levy share also drills at home in the evenings.</td></tr>
+<tr><td>Who may learn</td><td>Who is allowed to work on ideas.</td></tr>
+<tr><td>Share knowledge</td><td>Whether ideas pass to linked camps.</td></tr>
+<tr><td>Rename</td><td>The pencil beside the camp's name.</td></tr>
+</table>
+<p>At the top of Settings, for camps of the realm, is <a href="#crownhand">From the crown</a>.</p>
+</section>
+
+<section id="supply">
+<h2>Supply (two arrows)</h2>
+<figure class="side"><img src="guide/10-supply.jpg" alt="The Supply panel" loading="lazy"><figcaption>Each link, what the council has chosen, and the king's override.</figcaption></figure>
+<p>Every other camp is listed. Each link carries goods both ways if both councils allow it. <b>Each council decides</b> to export, import, both, or neither, from its own needs: a camp short of food stops sending, a chief hoards, a camp that shares by kin gives to kin.</p>
+<figure class="dia"><svg viewBox="0 0 760 170" role="img" aria-label="Supply and trust: camp A sends to camp B; if B sends back, trust grows; if B has spare but holds back while A is short, trust falls and bad blood grows">
+<defs><marker id="ah2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#e3c27f"/></marker><marker id="ah3" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#ff8a7a"/></marker></defs>
+<g font-family="Inter,system-ui,sans-serif" font-size="14" fill="#efe8dc" text-anchor="middle">
+<rect x="20" y="50" width="150" height="64" rx="12" fill="#262133" stroke="#3a3348"/><text x="95" y="78" font-weight="700">Camp A</text><text x="95" y="98" font-size="12" fill="#b4a993">asks for food</text>
+<rect x="590" y="50" width="150" height="64" rx="12" fill="#262133" stroke="#3a3348"/><text x="665" y="78" font-weight="700">Camp B</text><text x="665" y="98" font-size="12" fill="#b4a993">has spare</text>
+<path d="M590 68 H174" stroke="#e3c27f" stroke-width="2" marker-end="url(#ah2)"/><text x="380" y="60" font-size="13">sends: request met, trust grows, ideas travel</text>
+<path d="M174 100 H586" stroke="#ff8a7a" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#ah3)"/><text x="380" y="126" font-size="13" fill="#ff8a7a">holds back for 3 days: warning · 4 days: bond breaks, bad blood +25</text>
+<text x="380" y="156" font-size="12" fill="#b4a993">Free exchange (king's override) forces the flow both ways on one link, or for a whole people or realm</text>
+</g></svg><figcaption>Giving with nothing back costs trust; trading both ways builds it.</figcaption></figure>
+<table>
+<tr><th>Button</th><th>What it does</th></tr>
+<tr><td>Council decides</td><td>Leave the link to the two councils.</td></tr>
+<tr><td>Free exchange</td><td>The king's override: goods flow freely both ways on this link.</td></tr>
+<tr><td>Mediate</td><td>Appears on a link with bad blood between two camps of the realm. See <a href="#crownhand">From the crown</a>.</td></tr>
+</table>
+</section>
+
+<section id="card">
+<h2>Card (portrait)</h2>
+<figure class="side"><img src="guide/11-card.jpg" alt="A culture card" loading="lazy"><figcaption>Drawn from what the people actually wear, build and carry.</figcaption></figure>
+<p>The selected camp's people: land, rule, travel, arms, craft and belief, with a picture drawn from what they use. Tap the card to read their story in their own words. <b>AI prompt</b> writes a description you can paste into an image generator. <b>View cards</b> turns through every people in this game.</p>
+</section>
+
+<section id="crownhand">
+<h2>From the crown</h2>
+<figure class="side"><img src="guide/14-crown.jpg" alt="A camp's Settings with the From the crown section: how much food the crown can give, a warning that the camp is close to breaking its bond, and the Send relief and Honour buttons" loading="lazy"><figcaption>From the crown, at the top of a camp's Settings. Honour is greyed out because the bank holds no tokens yet.</figcaption></figure>
+<p>At the top of a realm camp's <b>Settings</b>, and as buttons in the War tab's Threats list. Every tool is paid for from something real, and the council still decides for itself.</p>
+<p><b>Where the crown's means come from, in order:</b> the <b>royal store</b> at the seat (tax paid in kind), then the <b>seat's own stores</b> down to one day's keep, then <b>tokens</b> from the bank. The section shows how much food the crown can give right now.</p>
+<table>
+<tr><th>Tool</th><th>Cost</th><th>Effect</th></tr>
+<tr><td>Send relief</td><td>The goods the camp is short of, from the crown's means; or bought at twice their value with tokens from the nearest camp with spare (that camp keeps the tokens)</td><td>Carriers walk it there (delay by distance). The request is met, loyalty +5, the camp's bad blood eases by 10. If it can't be paid, the reason is shown.</td></tr>
+<tr><td>Honour</td><td>15 tokens, paid into the camp's own purse</td><td>Loyalty +10; only +3 if honoured again within half a year.</td></tr>
+<tr><td>Mediate</td><td>20 tokens, or 20 food</td><td>Bad blood between two of your camps −20, and a little loyalty for each. (On the Supply row.)</td></tr>
+<tr><td>Invite back</td><td>20 tokens, or 30 food</td><td>For a camp that split away. The gift eases bad blood by 20; if what is left is under 30 and its trust isn't broken, it rejoins at loyalty 40, keeping its own people and ways. Otherwise it says why.</td></tr>
+</table>
+</section>
+
+<section id="commands">
+<h2>King's commands</h2>
+<p>At the top of the right panel. The king is a person on the map: these act where he stands.</p>
+<table>
+<tr><th>Command</th><th>What it does</th></tr>
+<tr><td>Mode: Gather / Explore</td><td>Gather: taps on resources set the king to work. Explore: taps only walk.</td></tr>
+<tr><td>Settle here</td><td>Found your first camp, the capital.</td></tr>
+<tr><td>Found camp here</td><td>A new camp of the <b>existing culture</b>: it joins your people and grows from the camp nearest it. It must lie beyond other camps' granted land.</td></tr>
+<tr><td>New people here</td><td>Begins a <b>new people with its own culture</b>, which you nurture by hand until it has a council.</td></tr>
+<tr><td>Tower here</td><td>A watch tower: it sees raiders coming.</td></tr>
+<tr><td>Outpost here</td><td>A small work crew beside a resource on ground that can't feed a camp; its parent carries food and water to it.</td></tr>
+<tr><td>Begin again here</td><td>Only when you have no seat left: starts a new people here, which becomes your seat.</td></tr>
+</table>
+</section>
+
+<section id="king">
+<h2>King settings (crown)</h2>
+<figure class="side"><img src="guide/08-king.jpg" alt="The King settings panel" loading="lazy"><figcaption>Choose a scope (this people, or the whole realm), then set the rules.</figcaption></figure>
+<table>
+<tr><th>Setting</th><th>What it does</th></tr>
+<tr><td>Scope</td><td>Apply the rules to the selected people or the whole realm. Your choices are kept as defaults for new camps.</td></tr>
+<tr><td>Rule, economy, learning, sharing</td><td>The same camp rules as in Settings, set for many camps at once.</td></tr>
+<tr><td>Supply</td><td>Council decides, or free exchange for the whole scope.</td></tr>
+<tr><td>Tax</td><td>None, light, fair or heavy (0, 5, 10 or 20% of a season's gains). See <a href="#tax">Tax</a>.</td></tr>
+<tr><td>Mandate to found</td><td>Give or withdraw a people's right to found new camps on their own. Without it, only you found camps.</td></tr>
+<tr><td>Realm stage and overview</td><td>How far the realm has come (for example, whether it uses tokens), tension and governance across camps.</td></tr>
+<tr><td>You have no seat</td><td>Appears only when no loyal camp is left: <b>Begin again here</b> or <b>Retire</b>.</td></tr>
+</table>
+<p>Military settings live in the <a href="#war">War tab</a>.</p>
+</section>
+
+<section id="settlements">
+<h2>Settlements (houses)</h2>
+<figure class="side"><img src="guide/09-settlements.jpg" alt="The Settlements panel" loading="lazy"><figcaption>Every camp, its people, population, food and loyalty.</figcaption></figure>
+<p>A table of every camp: its people, population, days of food, <b>Loyal</b> (its loyalty to the crown in a word), and what it is doing. Camps outside the realm show <b>own realm</b>. Tap a row to select the camp. <b>View cards</b> opens the carousel of this game's peoples.</p>
+</section>
+
+<section id="messages">
+<h2>Messages and the chronicle</h2>
+<p><b>Messages</b> (speech bubble) is the running log: arrivals, ideas, requests, warnings, battles. Important events also go into the <b>chronicle</b>, the people's long memory, which Skip season stops on and which the end screen draws from. Battle lines have a <b>Report</b> button for the full account.</p>
+</section>
+
+<section id="loyalty">
+<h2>Loyalty</h2>
+<p>Each camp of the realm has a loyalty to the crown from 0 to 100, shown in the camp header and the Settlements list. It drifts 6% a day toward a <b>target</b>:</p>
+<table>
+<tr><th>Factor</th><th>Effect on the target (base 60)</th></tr>
+<tr><td>Distance from the seat</td><td>−2 per km beyond 5 km, up to −30</td></tr>
+<tr><td>Same people as the capital</td><td>+15 (a different people: −15)</td></tr>
+<tr><td>Mandate to found</td><td>+10</td></tr>
+<tr><td>Ruled by a chief</td><td>−10</td></tr>
+<tr><td>Protected by a fort</td><td>+10</td></tr>
+<tr><td>The king visited in the last 12 days</td><td>+15</td></tr>
+</table>
+<p><b>Events push it directly:</b> a levy −3 (−8 at harvest); help from the capital +3; relief +5; honour +10; fair tax on a far or short camp −2, heavy tax −6; taxed while hungry −2; soldiers' wages paid home +2, unpaid soldiers sent home −5.</p>
+<p><b>Below 20 a camp is defiant:</b> it refuses the levy. Below 40 it may leave the realm when it breaks a bond with its parent. Soldiers are only hired from camps at 40 or more.</p>
+</section>
+
+<section id="grievance">
+<h2>Bad blood (grievance)</h2>
+<p>Grievance is between two camps, from 0 upward, and fades over time (faster between kin and trading partners). It is held by a whole people: a new camp of theirs inherits the worst of it.</p>
+<table>
+<tr><th>Cause</th><th>Bad blood</th></tr>
+<tr><td>An unanswered request while the other had spare</td><td>+8</td></tr>
+<tr><td>Giving with nothing back</td><td>+3</td></tr>
+<tr><td>Theft or taking by threat</td><td>+25</td></tr>
+<tr><td>A broken bond</td><td>+25</td></tr>
+<tr><td>Different peoples within 10 km</td><td>+0.3 a day</td></tr>
+<tr><td>A raid on us from their camp</td><td>+25 if it succeeds, +12 if beaten off</td></tr>
+<tr><td>Taking a camp</td><td>+40 with the camp its people fled to</td></tr>
+<tr><td>Land hunger</td><td>+10 a season (+20 if also hungry)</td></tr>
+<tr><td>Heavy tax</td><td>+5 toward the capital</td></tr>
+</table>
+<p>At <b>80 or more</b> between two camps of the same realm, a <a href="#civil">civil war</a> can start.</p>
+</section>
+
+<section id="tension">
+<h2>Tension and splits</h2>
+<p>When a camp asks a partner for food, water, wood or stone and the request goes unmet, tension climbs day by day. Splits now take two steps, and the crown can step in before either.</p>
+<figure class="dia"><svg viewBox="0 0 760 270" role="img" aria-label="A split in steps: request unmet; day 3 warning with Send relief; day 4 the bond breaks; the camp leaves the realm only if it breaks with its parent and its loyalty is under 40 or it broke bonds twice in a year; it can later be invited back">
+<defs><marker id="ah4" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#e3c27f"/></marker></defs>
+<g font-family="Inter,system-ui,sans-serif" font-size="13" fill="#efe8dc" text-anchor="middle">
+<rect x="10" y="20" width="140" height="58" rx="10" fill="#262133" stroke="#3a3348"/><text x="80" y="45" font-weight="700">Request unmet</text><text x="80" y="64" font-size="12" fill="#b4a993">a partner has spare</text>
+<rect x="190" y="20" width="160" height="58" rx="10" fill="#262133" stroke="#e3c27f"/><text x="270" y="45" font-weight="700" fill="#e3c27f">Day 3: warning</text><text x="270" y="64" font-size="12" fill="#b4a993">Send relief settles it</text>
+<rect x="390" y="20" width="160" height="58" rx="10" fill="#262133" stroke="#3a3348"/><text x="470" y="45" font-weight="700">Day 4: bond breaks</text><text x="470" y="64" font-size="12" fill="#b4a993">link cut, bad blood +25</text>
+<rect x="590" y="20" width="160" height="58" rx="10" fill="#2a1f22" stroke="#ff8a7a"/><text x="670" y="45" font-weight="700" fill="#ff8a7a">Leaves the realm</text><text x="670" y="64" font-size="12" fill="#b4a993">a new people</text>
+<path d="M150 49 H186" stroke="#e3c27f" stroke-width="2" marker-end="url(#ah4)"/><path d="M350 49 H386" stroke="#e3c27f" stroke-width="2" marker-end="url(#ah4)"/><path d="M550 49 H586" stroke="#ff8a7a" stroke-width="2" marker-end="url(#ah4)"/>
+<text x="568" y="104" font-size="12" fill="#b4a993">only if the break is with its parent (or child) AND</text>
+<text x="568" y="122" font-size="12" fill="#b4a993">loyalty under 40, or two breaks within a year</text>
+<text x="568" y="140" font-size="12" fill="#b4a993">(never the capital; never within a year of rejoining)</text>
+<rect x="390" y="168" width="360" height="56" rx="10" fill="#262133" stroke="#3a3348"/><text x="570" y="192" font-weight="700">Otherwise it stays in the realm</text><text x="570" y="211" font-size="12" fill="#b4a993">"breaks with X but stays with the realm"</text>
+<path d="M750 60 H756 V252 H80 V82" fill="none" stroke="#e3c27f" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#ah4)"/><text x="230" y="246" font-size="12" fill="#e3c27f">Invite back (the crown's gift; it keeps its new name)</text>
+</g></svg><figcaption>How a camp breaks away, and the points where the crown can stop it.</figcaption></figure>
+<p>A camp that has split keeps its new people's name even if it comes back, but the game remembers where that people came from (its <b>root</b>). Higher tension in chief-led camps can lead to taking from neighbours by threat.</p>
+</section>
+
+<section id="tax">
+<h2>Tax, the royal store and the bank</h2>
+<figure class="dia"><svg viewBox="0 0 760 240" role="img" aria-label="Tax flow: each camp pays a share of its season's gains; before tokens exist it goes in kind to the royal store; once the realm uses tokens it goes to the bank; the bank pays soldiers' wages to their home camps; the royal store and bank pay for the crown's help">
+<defs><marker id="ah5" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#e3c27f"/></marker></defs>
+<g font-family="Inter,system-ui,sans-serif" font-size="13" fill="#efe8dc" text-anchor="middle">
+<rect x="10" y="74" width="150" height="60" rx="10" fill="#262133" stroke="#3a3348"/><text x="85" y="99" font-weight="700">Camps</text><text x="85" y="118" font-size="12" fill="#b4a993">share of season gains</text>
+<rect x="250" y="14" width="190" height="60" rx="10" fill="#262133" stroke="#3a3348"/><text x="345" y="39" font-weight="700">Royal store</text><text x="345" y="58" font-size="12" fill="#b4a993">before tokens: goods in kind</text>
+<rect x="250" y="134" width="190" height="60" rx="10" fill="#262133" stroke="#e3c27f"/><text x="345" y="159" font-weight="700" fill="#e3c27f">The bank</text><text x="345" y="178" font-size="12" fill="#b4a993">once the realm uses tokens</text>
+<rect x="540" y="14" width="210" height="60" rx="10" fill="#262133" stroke="#3a3348"/><text x="645" y="39" font-weight="700">The crown's help</text><text x="645" y="58" font-size="12" fill="#b4a993">relief, gifts, invitations</text>
+<rect x="540" y="134" width="210" height="60" rx="10" fill="#262133" stroke="#3a3348"/><text x="645" y="159" font-weight="700">Standing army</text><text x="645" y="178" font-size="12" fill="#b4a993">wages paid to home camps</text>
+<path d="M160 94 L246 50" stroke="#e3c27f" stroke-width="2" marker-end="url(#ah5)"/><path d="M160 114 L246 160" stroke="#e3c27f" stroke-width="2" marker-end="url(#ah5)"/>
+<path d="M440 44 H536" stroke="#e3c27f" stroke-width="2" marker-end="url(#ah5)"/><path d="M440 160 L536 60" stroke="#e3c27f" stroke-width="2" marker-end="url(#ah5)"/><path d="M440 168 H536" stroke="#e3c27f" stroke-width="2" marker-end="url(#ah5)"/>
+<path d="M645 194 V226 H85 V138" fill="none" stroke="#e3c27f" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#ah5)"/><text x="470" y="219" font-size="12" fill="#b4a993">wages come home as income</text>
+</g></svg><figcaption>Tax is drawn because the realm needs it; one of its first uses is soldiers.</figcaption></figure>
 <ul>
-<li><b>The camp gets its real name.</b> It takes the name of the real village whose land it holds, from the official Bulgarian register, with the Bulgarian spelling beside it (for example Plovdiv, &#1055;&#1083;&#1086;&#1074;&#1076;&#1080;&#1074;). Camps founded later inside a named town's land keep plain names.</li>
-<li><b>The people get their name</b>, and their <b>culture card</b> begins.</li>
-<li><b>The council hands out the jobs.</b> Under Work, <b>Council runs the jobs</b> turns on. People move to whatever the camp is short of, and spare hands get free time.</li>
-<li><b>The council builds.</b> It puts up anything new to the best way it knows: a solid house before a hut, and tiles once it can fire them. It leaves what already stands alone.</li>
+<li><b>Rates:</b> none, light, fair, heavy: 0, 5, 10 or 20% of what a camp gained over the season, collected at the change of season.</li>
+<li><b>Hungry camps are exempt</b> but lose 2 loyalty for being asked.</li>
+<li><b>Before tokens:</b> tax goes in kind (food, wood, stone, poles, straw, hide, fibre; up to 300 of each) into the <b>royal store</b> at the seat.</li>
+<li><b>Tokens:</b> once the capital's exchange has grown far enough (tallies and writing), goods are valued and tax is paid in tokens into the <b>bank</b>.</li>
 </ul>
-<figure class="side"><img src="guide/07-council.jpg" alt="The Work panel after the council takes over, with the camp now named Plovdiv in Latin and Cyrillic and Council runs the jobs turned on" loading="lazy"><figcaption>After the handover: the camp is named after the real village whose land it holds, and the council runs the jobs.</figcaption></figure>
-<p><b>What the king keeps:</b></p>
+</section>
+
+<section id="war">
+<h2>The War tab (crossed swords)</h2>
+<p>Everything military in one place, fourth icon on the left.</p>
+<figure class="side"><img src="guide/13-war.jpg" alt="The War tab showing Threats with Invite back and Send relief buttons, Forces, and the Levies table" loading="lazy"><figcaption>The top of the War tab: threats with the crown's buttons beside them, forces, and the levy table per camp.</figcaption></figure>
 <table>
-<tr><th>You can still</th><th>Where</th></tr>
-<tr><td>Set thinkers on any idea in hand</td><td>Ideas, the <b>+</b> beside the idea</td></tr>
-<tr><td>Build anything yourself</td><td>Build, including the older kinds</td></tr>
-<tr><td>Take the jobs back</td><td>Work, switch off <b>Council runs the jobs</b></td></tr>
-<tr><td>Set this camp's rules</td><td>Settings: who decides (council or chief), how the store is shared, the levy, who may learn, whether knowledge is shared</td></tr>
-<tr><td>Set rules for many camps</td><td>The crown, King settings: the same rules for a whole people or the whole realm, kept as your defaults</td></tr>
-<tr><td>Order free exchange</td><td>Supply for one link, or the crown for a whole people or realm</td></tr>
-<tr><td>Grant the mandate to found</td><td>The crown: give or withdraw a people's right to found new camps on their own</td></tr>
-<tr><td>Go anywhere</td><td>The map, with Mode set to Explore or Gather</td></tr>
+<tr><th>Section</th><th>What is there</th></tr>
+<tr><td>Threats</td><td>Raiders or strangers seen on the march; camps close to breaking a bond (with <b>Send relief</b>); camps that broke away (with <b>Invite back</b>); camps that have outgrown their land; defiant camps.</td></tr>
+<tr><td>Wars of the councils</td><td>Any civil war under way.</td></tr>
+<tr><td>Forces</td><td>The bank and the standing army: hire, dismiss, wages. Then forts and armies: garrisons, <b>raise</b>, unit roles, <b>march</b>, <b>stand down</b>.</td></tr>
+<tr><td>Levies</td><td>The realm levy rate, and a table per camp: its levy, people drilled at home, old soldiers, and what it would send (or why not). Tap a row to open the camp.</td></tr>
+<tr><td>Watch</td><td>Towers and beacons, raiders reported, <b>raiders on/off</b>, and a <b>test raid</b>.</td></tr>
+<tr><td>Strangers</td><td>Each stranger people you have seen: trade, bad blood, <a href="#favour">favour</a>, land hunger and <b>Send a gift</b>. Then the <b>Strangers met</b> table: bands, flags, where they come from, how often they came, what they took, how often they were beaten, and their leader if known.</td></tr>
+<tr><td>Battles</td><td>The last six fights, each with a <b>Report</b>.</td></tr>
 </table>
-<figure class="side"><img src="guide/08-king.jpg" alt="The King settings panel with scope, rules for rule, sharing, levy, learning, ideas, supply and the mandate to found" loading="lazy"><figcaption>King settings, under the crown. Choose this people or the whole realm, then set the rules every council in that scope follows.</figcaption></figure>
-<p>The council doesn't take your choices away. It carries them out day to day, so you can step back and look at the bigger picture.</p>
+<figure class="side"><img src="guide/15-strangers.jpg" alt="The Strangers part of the War tab: a stranger people with Send a gift, the Strangers met table, and recent battles with Report buttons" loading="lazy"><figcaption>Further down: a settled stranger people with its bad blood and favour, the Strangers met table, and the last battles.</figcaption></figure>
+</section>
 
-<h2 id="after">After the handover</h2>
-<p><b>Spread out.</b> Switch Mode to <b>Explore</b>, walk beyond the solid line and press <b>Found camp here</b>. The new camp keeps the same culture: it joins your people and grows from the camp nearest it. <b>Outpost here</b> puts a small work crew beside a resource on ground that can't feed a camp. Its parent camp carries food and water out to it.</p>
-<figure class="side"><img src="guide/09-settlements.jpg" alt="The Settlements panel with a View cards button and a table of camps" loading="lazy"><figcaption><b>Settlements</b>, under the houses icon: every camp with its people, population, days of food and what it is doing. Tap a row to open that camp.</figcaption></figure>
-<p><b>Start a different people.</b> <b>New people here</b> begins a new people with its own culture. You nurture it by hand, just as you did the first, until it has its own council. Then compare how the two turn out.</p>
-<p><b>Link camps.</b> Open <b>Supply</b> (the two arrows) to see every other camp. Each council decides what it sends and takes along each link: a camp short of food stops sending, a chief under strain hoards, and a camp that shares by rank only gives to its kin. You can leave it to the council or order <b>Free exchange</b> both ways, for one link or, under the crown, for a whole people or the whole realm. A camp that gives and gets nothing back loses trust, and camps that trade both ways grow closer. Links also carry ideas from camp to camp.</p>
-<figure class="side"><img src="guide/10-supply.jpg" alt="The Supply panel showing a neighbouring camp with Council decides and Free exchange buttons" loading="lazy"><figcaption><b>Supply</b>: what moves along each link, what each council has chosen and why, and the king's override.</figcaption></figure>
-<p><b>Watch the land and its dangers.</b> Fires, earthquakes and floods happen, and they change how people choose to build. A camp burned out may turn to stone, and one shaken by an earthquake may turn back to timber. Towers and forts, under the crown, are for watching the borders once you turn raiders on.</p>
-<p><b>Look at who they have become.</b> Open <b>Card</b> (the portrait card) for the selected camp's people. It shows their land, rule, travel, arms, craft and belief, with a picture drawn from what they actually use. Tap the card to read their story in their own words. <b>AI prompt</b> writes a detailed description you can paste into an image generator. <b>View cards</b>, in Settlements or under the card, turns through every people in this game.</p>
-<figure class="side"><img src="guide/11-card.jpg" alt="A culture card for the Hill People showing an elder, a woman and a warrior in front of their houses, with their traits below" loading="lazy"><figcaption>A culture card, drawn from what the people actually wear, build and carry. Tap it to read their story in their own words.</figcaption></figure>
-<p><b>Save and continue.</b> The game saves itself in your browser every few minutes and at each change of season. Next time you open it, press <b>Continue</b> in the top bar. <b>Save</b> also downloads the game as a file you can <b>Load</b> anywhere.</p>
+<section id="forces">
+<h2>Levies, soldiers and forts</h2>
+<figure class="dia"><svg viewBox="0 0 760 190" role="img" aria-label="Three kinds of fighters: townsfolk defend their own camp with their tools; levies are called from camps in emergencies and are a burden; standing soldiers are hired with tokens from people out of work and their wages are income for their home camps">
+<g font-family="Inter,system-ui,sans-serif" font-size="13" fill="#efe8dc">
+<rect x="10" y="14" width="235" height="162" rx="12" fill="#262133" stroke="#3a3348"/><text x="128" y="40" text-anchor="middle" font-weight="700" fill="#e3c27f">Townsfolk</text>
+<text x="24" y="66">Defend their own camp</text><text x="24" y="86">Fight with their work tools</text><text x="24" y="106">No armour; 60% stand if surprised</text><text x="24" y="126">Real people: deaths are real</text><text x="24" y="156" fill="#b4a993" font-size="12">Always there, never called</text>
+<rect x="262" y="14" width="235" height="162" rx="12" fill="#262133" stroke="#3a3348"/><text x="380" y="40" text-anchor="middle" font-weight="700" fill="#e3c27f">Levies</text>
+<text x="276" y="66">Called from camps in need</text><text x="276" y="86">Old soldiers and drilled first</text><text x="276" y="106">Unpaid: a burden on the camp</text><text x="276" y="126">Defiant camps refuse</text><text x="276" y="156" fill="#b4a993" font-size="12">Muster at a fort</text>
+<rect x="514" y="14" width="236" height="162" rx="12" fill="#262133" stroke="#3a3348"/><text x="632" y="40" text-anchor="middle" font-weight="700" fill="#e3c27f">Standing army</text>
+<text x="528" y="66">Needs tokens, a fort, a felt need</text><text x="528" y="86">Hired from people out of work</text><text x="528" y="106">10 tokens a season, paid home</text><text x="528" y="126">Drills daily, up to 0.3</text><text x="528" y="156" fill="#b4a993" font-size="12">The king's to raise and place</text>
+</g></svg><figcaption>Levies are the burden; soldiers are income.</figcaption></figure>
+<h3>Levies</h3>
+<ul>
+<li>Each camp's <b>levy</b> share (Settings, or the realm rate in War) is who it owes when called.</li>
+<li><b>Village drill:</b> the levy share practises in the evening hours and reaches basic training in about a year. It stops while the camp is hungry and fades slowly when practice stops.</li>
+<li><b>Old soldiers</b>: standing soldiers who went home keep their training (never below a base level) and are called first.</li>
+<li>A muster itself trains a little. The wounded are not called.</li>
+</ul>
+<h3>Standing army</h3>
+<ul>
+<li><b>Hire 1 / Hire 5</b> per camp, from people <b>out of work</b>, from camps at loyalty 40 or more. The bank must cover a season's wages for all soldiers.</li>
+<li><b>Wages</b> (10 tokens per soldier per season) go to each soldier's home camp as income (+2 loyalty). Unpaid soldiers go home, and their camps lose 5 loyalty.</li>
+<li>Soldiers stand at a fort, drill every day, and walk paths when moved or marched (columns along trails).</li>
+</ul>
+<h3>Forts and towers</h3>
+<p>A fort gives camps nearby protection (+10 loyalty target), a garrison, and a place to muster. Towers see raiders approach, so defenders are not surprised.</p>
+</section>
 
-<div class="tip"><b>One last tip:</b> Don't rush. The game rewards watching what your people need and backing their answers. The culture you end up with is the story of that land and the choices made on it.</div>
+<section id="fight">
+<h2>How a fight is decided</h2>
+<p>There are no unit scores. Every fighter is a real person with a weapon, armour, skill and nerve. A fight on a 150 m field runs: archers and slingers shoot as the sides close, defenders meet the attackers in the last 60 m, javelins are thrown at 20 m, then melee blows land at the same time on both sides. Lines wrap round the ends; walls (×1.5) and fences or high ground (×1.2) favour defenders. When too many have fallen a side breaks and the routed are chased.</p>
+<table>
+<tr><th>Weapon</th><th>Character</th></tr>
+<tr><td>Spear</td><td>Reach 2, damage 3.2, holds the line better</td></tr>
+<tr><td>War hammer</td><td>Damage 5, slow (0.7), punches through armour (1.5)</td></tr>
+<tr><td>Battle axe</td><td>Damage 4.5, some armour penetration</td></tr>
+<tr><td>Hooked blade</td><td>Fast (1.2)</td></tr>
+<tr><td>Harpoon</td><td>Thrown at 25 m for 4 damage</td></tr>
+<tr><td>Bow</td><td>Range 120 m, 3 per shot, 12 shots</td></tr>
+<tr><td>Sling</td><td>Range 90 m, 2.5 per shot, 20 stones</td></tr>
+<tr><td>Townsfolk tools</td><td>Felling axes, mauls, picks and hammers, hunting spears or bows, sickles, fish spears, household axes and adzes, else knives: at 85% of a made weapon</td></tr>
+</table>
+<ul>
+<li><b>Metal</b> improves weapons: copper ×1.1, bronze ×1.25, iron ×1.3.</li>
+<li><b>Armour</b>: hide 1, coats 2, scale 3.5 points; each point not pierced cuts damage by 8%. A shield blocks 15% (20% with a boss).</li>
+<li><b>Skill</b> grows with battles survived and drill; age wears it down. <b>Aim</b> grows with hunting, battles and drill. <b>Nerve</b> comes from fighting at home, a chief, battles, drill, and suffers in hunger.</li>
+<li><b>The wounded</b> rest at home and fight at 6 of 10 strength if they must.</li>
+<li><b>Reports</b> are optional: one line in Messages, with a <b>Report</b> button for the account.</li>
+</ul>
+</section>
+
+<section id="civil">
+<h2>Civil war</h2>
+<p>The king does not start or settle wars between councils. When bad blood between two camps of the same realm reaches <b>80</b> and one side is ready to fight, a war of the councils begins.</p>
+<ul>
+<li>Other camps choose sides by their ties. If the capital joins, the other side loses 20 loyalty.</li>
+<li>War levies walk to each side's leading camp; sides take turns to march, only with at least 0.6 of the defenders' strength. A winner takes 30% of the camp's food and is marked warlike. No supply flows between sides; camps at war refuse the crown's levy.</li>
+<li><b>Endings:</b> a two-win lead, both sides worn out (or 36 days), or elders of a camp tied to both broker a peace.</li>
+<li><b>The defeated splinter:</b> a new people with the same history and traditions, but its own flag and dress. Too few for a council (under 6), they scatter as wanderers. Enough, and they settle far from everyone as a realm of their own, which may later rejoin.</li>
+</ul>
+</section>
+
+<section id="bands">
+<h2>Raider bands</h2>
+<p>Turn raiders on in the War tab's Watch section. Raiders are <b>peoples from beyond the map edge</b>, not faceless numbers.</p>
+<figure class="dia"><svg viewBox="0 0 760 230" role="img" aria-label="The stranger lifecycle: a band with no camp raids; it may take a camp and become settled strangers; settled strangers may seed more camps and become a neighbour realm; from there they can trade and join the crown, raid or march for land, or be conquered">
+<defs><marker id="ah6" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#e3c27f"/></marker></defs>
+<g font-family="Inter,system-ui,sans-serif" font-size="13" fill="#efe8dc" text-anchor="middle">
+<rect x="10" y="20" width="170" height="70" rx="12" fill="#262133" stroke="#3a3348"/><text x="95" y="48" font-weight="700">Band</text><text x="95" y="68" font-size="12" fill="#b4a993">no camp; raids from an edge</text>
+<rect x="295" y="20" width="170" height="70" rx="12" fill="#262133" stroke="#3a3348"/><text x="380" y="48" font-weight="700">Settled strangers</text><text x="380" y="68" font-size="12" fill="#b4a993">a taken camp, a chief</text>
+<rect x="580" y="20" width="170" height="70" rx="12" fill="#262133" stroke="#3a3348"/><text x="665" y="48" font-weight="700">Neighbour realm</text><text x="665" y="68" font-size="12" fill="#b4a993">seeds its own camps</text>
+<path d="M180 55 H291" stroke="#e3c27f" stroke-width="2" marker-end="url(#ah6)"/><text x="236" y="46" font-size="11" fill="#b4a993">takes a camp</text>
+<path d="M465 55 H576" stroke="#e3c27f" stroke-width="2" marker-end="url(#ah6)"/><text x="520" y="46" font-size="11" fill="#b4a993">grows</text>
+<rect x="60" y="150" width="190" height="62" rx="12" fill="#1f2a22" stroke="#7fc08a"/><text x="155" y="176" font-weight="700" fill="#9fe0aa">Trade and join</text><text x="155" y="195" font-size="12" fill="#b4a993">favour, gifts, room to grow</text>
+<rect x="285" y="150" width="190" height="62" rx="12" fill="#2a1f22" stroke="#ff8a7a"/><text x="380" y="176" font-weight="700" fill="#ff8a7a">Raid or march</text><text x="380" y="195" font-size="12" fill="#b4a993">land hunger, bad blood</text>
+<rect x="510" y="150" width="190" height="62" rx="12" fill="#262133" stroke="#e3c27f"/><text x="605" y="176" font-weight="700" fill="#e3c27f">Conquered</text><text x="605" y="195" font-size="12" fill="#b4a993">or taken back by your army</text>
+<path d="M380 90 L170 146" stroke="#7fc08a" stroke-width="1.5" marker-end="url(#ah6)"/><path d="M380 90 V146" stroke="#ff8a7a" stroke-width="1.5" marker-end="url(#ah6)"/><path d="M380 90 L590 146" stroke="#e3c27f" stroke-width="1.5" marker-end="url(#ah6)"/>
+</g></svg><figcaption>Every stranger follows the same rules as your own people and moves through the same stages.</figcaption></figure>
+<ul>
+<li><b>Identity:</b> each band has a name, a flag (an emblem on a colour), and weapons from the land beyond its edge: woods give stone axes and short bows; marsh and river give fish spears; hills and open ground give spears, slings or javelins.</li>
+<li><b>They come back:</b> about two raids in three are a known band returning. A band grows with wins, shrinks with losses and the wounded it carries, and breaks up if beaten down far enough. A raid with 35% or more wounded turns for home.</li>
+<li><b>War leader and temper:</b> bold (quick to attack), wary (only where sure), greedy (drawn to full stores), vengeful (comes back for camps that beat it).</li>
+<li><b>Memory:</b> a band fears camps that beat it, unless its leader is vengeful.</li>
+<li><b>What you learn:</b> at first sight, only flag, numbers, weapons and the edge they came from. The leader's name and temper come from the fallen and the wounded after a fight.</li>
+</ul>
+</section>
+
+<section id="settled">
+<h2>Settled strangers</h2>
+<ul>
+<li><b>Taking a camp:</b> after a won raid a band may stay, if it still has 6 or more men and the townsfolk left are fewer than about half its number. A bold or greedy leader is likelier to stay.</li>
+<li>The camp becomes a new people under the band's name and flag, ruled by a chief, <b>warlike</b>, and outside the realm. Its links to your camps are cut. Half the surviving townsfolk flee to your nearest camp; the rest stay.</li>
+<li><b>Raiding from home:</b> a settled band raids with its own people, up to 40% of them; the dead do not come back.</li>
+<li><b>If your seat falls:</b> you flee to the nearest camp still loyal (40+) and not at war, which becomes your seat; every camp loses 10 loyalty. If none is left, King settings offers <b>Begin again here</b> or <b>Retire</b>.</li>
+<li><b>Taking it back:</b> march an army on it ("March on X (held by the Y)"). If you win, it rejoins under a council at loyalty 30.</li>
+<li><b>Conquest:</b> any stranger camp you have seen can be marched on. A win brings it under the crown, keeping its people and ways, at loyalty 15 and resentful.</li>
+</ul>
+</section>
+
+<section id="favour">
+<h2>Trade, favour and joining</h2>
+<p><b>Favour</b> is how each stranger people feels about the crown, from hostile to warm (−100 to 100), shown in the War tab. It changes only through events:</p>
+<table>
+<tr><th>Event</th><th>Favour</th></tr>
+<tr><td>Trade agreed</td><td>+10</td></tr>
+<tr><td>Each day of two-way trade</td><td>+0.5 (+1 while they are hungry)</td></tr>
+<tr><td>A gift (Send a gift)</td><td>+15 (+5 to a greedy leader asking again)</td></tr>
+<tr><td>Trade refused</td><td>−5</td></tr>
+<tr><td>Their failed raid or march</td><td>−5</td></tr>
+<tr><td>You conquer one of their camps</td><td>−40</td></tr>
+</table>
+<ul>
+<li><b>Asking to trade:</b> a stranger camp that is short, hasn't raided in 12 days, and whose leader isn't vengeful asks your nearest camp (within 20 km). That council accepts if bad blood is under 25, it isn't hungry and its loyalty is 20+. Otherwise it refuses and says why.</li>
+<li><b>Peace:</b> a band that trades both ways with the realm does not raid it.</li>
+<li><b>Gifts:</b> 30 food or 20 tokens; eases bad blood by 20 for all their camps.</li>
+<li><b>Joining the crown:</b> with little bad blood (under 15), a leader who isn't vengeful, and either favour 60+ while trading or favour 40+ while land-hungry. All their camps join at loyalty 50, keeping their people, ways and flag.</li>
+</ul>
+</section>
+
+<section id="land">
+<h2>Land hunger</h2>
+<p>A full or mixed map is not an ending: it is a standoff that ends in war or in union.</p>
+<ul>
+<li>At each season, a camp with a council and <b>12 or more people</b> that cannot find free ground to found a new camp becomes <b>land-hungry</b>. Strangers only become land-hungry a year after they were taken or founded.</li>
+<li>Its bad blood with the nearest camp of another realm (within 30 km) grows each season.</li>
+<li>A crowded council of yours with heavy bad blood toward strangers raises a levy of one in ten on itself. Marching stays your choice.</li>
+<li><b>Strangers march</b> when they are ruled by a chief, land-hungry, low in favour (under 20), with bad blood 60+ toward one of your camps, and they can see they have the numbers: at least 0.8 of the defenders they can see plus any of your armies within 30 km. At most once a season. A win takes the camp.</li>
+</ul>
+</section>
+
+<section id="seasons">
+<h2>Seasons and disasters</h2>
+<ul>
+<li><b>Frost:</b> berries and plots all but stop growing, huts leak warmth and fires burn more wood. Messages warn a few days ahead. Store wood and food, and raise solid houses.</li>
+<li><b>Fire, flood, earthquake:</b> they happen, damage stores and buildings, and change how people choose to build (a burned-out camp may turn to stone; one shaken by an earthquake may turn back to timber).</li>
+<li><b>Hunger</b> stops village drill, makes camps exempt from tax, raises the chance of splits, and makes strangers ask to trade.</li>
+</ul>
+</section>
+
+<section id="endings">
+<h2>Endings</h2>
+<p>An ending is a state the valley reaches, never a score. Each is reached once, written to the chronicle, and opens the end screen. You choose <b>Play on</b> or <b>End the reign</b>.</p>
+<figure class="dia"><svg viewBox="0 0 760 250" role="img" aria-label="Endings: if no camp of the realm is left, No camp answers to the crown. If you retire, The king lays down the crown. If the map is full and every camp is in the realm: one people (by root) gives One people fills the valley; several peoples give Many peoples, one crown. A full map with strangers is not an ending">
+<defs><marker id="ah7" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#e3c27f"/></marker></defs>
+<g font-family="Inter,system-ui,sans-serif" font-size="13" fill="#efe8dc" text-anchor="middle">
+<rect x="10" y="20" width="200" height="56" rx="10" fill="#262133" stroke="#3a3348"/><text x="110" y="45" font-weight="700">Is the map full?</text><text x="110" y="64" font-size="12" fill="#b4a993">no free ground that feeds a camp</text>
+<rect x="290" y="20" width="200" height="56" rx="10" fill="#262133" stroke="#3a3348"/><text x="390" y="45" font-weight="700">Every camp in the realm?</text><text x="390" y="64" font-size="12" fill="#b4a993">no strangers, none split away</text>
+<rect x="560" y="8" width="190" height="44" rx="10" fill="#262133" stroke="#e3c27f"/><text x="655" y="35" font-weight="700" fill="#e3c27f">One people fills the valley</text>
+<rect x="560" y="62" width="190" height="44" rx="10" fill="#262133" stroke="#e3c27f"/><text x="655" y="89" font-weight="700" fill="#e3c27f">Many peoples, one crown</text>
+<path d="M210 48 H286" stroke="#e3c27f" stroke-width="2" marker-end="url(#ah7)"/><text x="248" y="40" font-size="11" fill="#b4a993">yes</text>
+<path d="M490 40 L556 30" stroke="#e3c27f" stroke-width="2" marker-end="url(#ah7)"/><text x="525" y="22" font-size="11" fill="#b4a993">one root</text>
+<path d="M490 58 L556 80" stroke="#e3c27f" stroke-width="2" marker-end="url(#ah7)"/><text x="525" y="86" font-size="11" fill="#b4a993">several</text>
+<path d="M390 76 V118" stroke="#b4a993" stroke-width="1.5" marker-end="url(#ah7)"/><text x="390" y="136" font-size="12" fill="#b4a993">no: a standoff, war or union (land hunger)</text>
+<rect x="10" y="168" width="350" height="56" rx="10" fill="#2a1f22" stroke="#ff8a7a"/><text x="185" y="193" font-weight="700" fill="#ff8a7a">No camp answers to the crown</text><text x="185" y="212" font-size="12" fill="#b4a993">checked daily: no camp of the realm left</text>
+<rect x="400" y="168" width="350" height="56" rx="10" fill="#262133" stroke="#3a3348"/><text x="575" y="193" font-weight="700">The king lays down the crown</text><text x="575" y="212" font-size="12" fill="#b4a993">you choose Retire, or End the reign</text>
+</g></svg><figcaption>Map-full endings are checked at each change of season; losing the realm is checked daily.</figcaption></figure>
+<figure><img src="guide/16-end.jpg" alt="The end screen for One people fills the valley, with the land held, the peoples, chronicle entries and the Play on and End the reign buttons" loading="lazy"><figcaption>The end screen. Play on closes it; End the reign retires the king and records the reign.</figcaption></figure>
+<ul>
+<li><b>One people</b> counts every camp whose people traces back to your founding people, including branches that broke away and came back.</li>
+<li><b>The end screen</b> shows years, camps, people, ideas known and battles; who holds the land; each people's camps and population; endings reached; and the last major chronicle entries. Nothing on it is a score.</li>
+<li><b>End the reign</b> retires the king and saves a record of the reign in this browser, then offers <b>Watch the valley</b> or <b>Start a new game</b>.</li>
+<li>The king does not age or die: he is symbolic. The settlements of the realm are what matter.</li>
+</ul>
+<div class="tip"><b>From test runs:</b> a peaceful valley about 4% the size of the map filled in about 17 years and reached "One people fills the valley" in year 39, once every split camp had come back. With raiders on and an autopilot king who never raised an army, the realm was lost in year 35.</div>
+</section>
+
+<section id="saving">
+<h2>Saving and loading</h2>
+<ul>
+<li>The game saves itself in your browser every few minutes and at each change of season. <b>Continue</b> in the top bar picks it up.</li>
+<li><b>Save</b> downloads the game as a file; <b>Load</b> opens one, on any device.</li>
+<li>Saves from older versions still load: new features are added as optional data.</li>
+</ul>
+</section>
+
+<section id="glossary">
+<h2>Glossary</h2>
+<table>
+<tr><th>Term</th><th>Meaning</th></tr>
+<tr><td>Adrift</td><td>A camp that has split away from the realm.</td></tr>
+<tr><td>Bad blood</td><td>Grievance between two camps.</td></tr>
+<tr><td>Band</td><td>Raiders from beyond the map edge, with a name, flag and war leader.</td></tr>
+<tr><td>Capital / seat</td><td>The camp the king rules from.</td></tr>
+<tr><td>Council / chief</td><td>Who decides in a camp.</td></tr>
+<tr><td>Drill</td><td>Training, held by each person; it makes better fighters.</td></tr>
+<tr><td>Favour</td><td>A stranger people's goodwill toward the crown.</td></tr>
+<tr><td>Grant / reach</td><td>A camp's fixed land (solid line) and how far it works (dashed line).</td></tr>
+<tr><td>Land-hungry</td><td>A crowded camp with no free ground left to found on.</td></tr>
+<tr><td>Levy</td><td>The share of adults a camp owes when the crown calls.</td></tr>
+<tr><td>Loyalty</td><td>A camp's loyalty to the crown, 0 to 100.</td></tr>
+<tr><td>Mandate</td><td>A people's right to found new camps on its own.</td></tr>
+<tr><td>Old soldier</td><td>A former standing soldier at home, called first in a levy.</td></tr>
+<tr><td>Outpost</td><td>A work crew on ground that can't feed a camp.</td></tr>
+<tr><td>Root</td><td>The people a split-off people came from.</td></tr>
+<tr><td>Royal store</td><td>Tax in kind at the seat, before tokens.</td></tr>
+<tr><td>Splinter</td><td>A defeated side of a civil war, turned into its own people.</td></tr>
+<tr><td>Stranger</td><td>Any people outside your realm.</td></tr>
+<tr><td>Tokens / the bank</td><td>Currency, once the realm uses it, and the crown's holding of it.</td></tr>
+<tr><td>Warlike</td><td>A camp that has taken by force; others remember it.</td></tr>
+</table>
 <a class="play" href="index.html">Play Valley</a>
+</section>
 </main>
+</div>
+<script>
+(function(){
+ var q=document.getElementById('q'),secs=[].slice.call(document.querySelectorAll('main section')),links=[].slice.call(document.querySelectorAll('#toc a')),nohit=document.getElementById('nohit');
+ q.addEventListener('input',function(){var t=q.value.trim().toLowerCase(),hits=0;secs.forEach(function(s){var ok=!t||s.textContent.toLowerCase().indexOf(t)>=0;s.classList.toggle('hide',!ok);if(ok)hits++;});links.forEach(function(a){var s=document.getElementById(a.getAttribute('href').slice(1));a.style.display=s&&s.classList.contains('hide')?'none':'';});nohit.style.display=hits?'none':'block';});
+ function spy(){var y=window.scrollY+90,cur=null;secs.forEach(function(s){if(!s.classList.contains('hide')&&s.offsetTop<=y)cur=s.id;});links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+cur);});}
+ window.addEventListener('scroll',spy,{passive:true});spy();
+})();
+</script>
 </body>
 </html>
