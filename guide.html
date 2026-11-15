@@ -50,8 +50,13 @@ td:first-child{color:#e3c27f}
 .kv{display:inline-block;background:#262133;border-radius:6px;padding:1px 8px;font-size:13px;color:#e3c27f;margin:0 2px}
 .play{display:inline-block;margin-top:10px;background:#e3c27f;color:#14121b;text-decoration:none;font-weight:600;padding:10px 18px;border-radius:8px}
 section.hide{display:none}
+.phones{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0 26px}.phones figure{margin:0}.phones img{width:100%}
+.pair{display:grid;grid-template-columns:1.6fr 1fr;gap:16px;align-items:start;margin:18px 0 26px}.pair figure{margin:0}
+.mk{display:inline-flex;width:20px;height:20px;border-radius:50%;border:2px solid #fff;vertical-align:-4px;margin-right:6px}
+@media(max-width:860px){.phones{grid-template-columns:1fr 1fr}.pair{grid-template-columns:1fr}}
 .nohit{display:none;color:#b4a993;margin-top:30px}
-@media(max-width:860px){.wrap{grid-template-columns:1fr}aside{position:static;height:auto;border-right:0;border-bottom:1px solid #2c2638;columns:2}main{padding:20px 18px 80px}figure.side{flex-direction:column}figure.side img{width:100%}header input{margin-left:0;width:100%}}
+section{scroll-margin-top:70px}
+@media(max-width:860px){header{position:static}section{scroll-margin-top:8px}.wrap{grid-template-columns:1fr}aside{position:static;height:auto;border-right:0;border-bottom:1px solid #2c2638;columns:2}main{padding:20px 18px 80px}figure.side{flex-direction:column}figure.side img{width:100%}header input{margin-left:0;width:100%}}
 </style>
 </head>
 <body>
@@ -63,6 +68,8 @@ section.hide{display:none}
  <a href="#aim">The aim</a>
  <a href="#rules">The rules of the world</a>
  <a href="#screen">The screen</a>
+ <a href="#phone">On a phone</a>
+ <a href="#marks">Map marks and shadows</a>
  <a href="#start">Your first camp</a>
  <a href="#council">Handing over to a council</a>
  <div class="grp">A camp's panels</div>
@@ -83,6 +90,7 @@ section.hide{display:none}
  <a href="#tension">Tension and splits</a>
  <a href="#tax">Tax, the royal store and the bank</a>
  <div class="grp">War</div>
+ <a href="#warshort">War in short</a>
  <a href="#war">The War tab</a>
  <a href="#forces">Levies, soldiers and forts</a>
  <a href="#fight">How a fight is decided</a>
@@ -94,7 +102,8 @@ section.hide{display:none}
  <a href="#land">Land hunger</a>
  <div class="grp">The long game</div>
  <a href="#seasons">Seasons and disasters</a>
- <a href="#endings">Endings</a>
+ <a href="#endings">Winning and losing</a>
+ <a href="#maps">Maps</a>
  <a href="#saving">Saving and loading</a>
  <a href="#glossary">Glossary</a>
 </aside>
@@ -121,7 +130,7 @@ section.hide{display:none}
 <text x="460" y="52" font-size="12" fill="#b4a993">needs a reason, the means, and free time</text>
 </g></svg><figcaption>The loop behind everything. Two peoples on different ground meet the same need in different ways, and that is where culture comes from.</figcaption></figure>
 <p>So the culture you end up with is a <b>consequence of the land and what its people needed</b>, not a set you pick from a menu. Their houses, tools, weapons, dress and beliefs all grow from what was around them and what they had to solve.</p>
-<figure><img src="guide/12-screen.jpg" alt="The Valley game screen with a camp on the map, the icon columns on both edges and a culture card on the right" loading="lazy"><figcaption>A camp a few years in.</figcaption></figure>
+<div class="pair"><figure><img src="guide/12-screen.jpg" alt="The Valley game on a computer with a realm of camps on the map, the icon columns on both edges and a camp panel on the right" loading="lazy"><figcaption>On a computer, a realm a year in.</figcaption></figure><figure><img src="guide/m3-settled.jpg" alt="Valley on a phone just after settling the first camp, with families by the fire and resource marks around" loading="lazy"><figcaption>On a phone, the first camp.</figcaption></figure></div>
 </section>
 
 <section id="aim">
@@ -136,7 +145,7 @@ section.hide{display:none}
 <tr><td>The king lays down the crown</td><td>You retire, or end the reign from the end screen.</td></tr>
 <tr><td>No camp answers to the crown</td><td>Every camp of the realm is lost, taken, broken away or abandoned.</td></tr>
 </table>
-<p>A full valley split between realms is not an ending: it is a standoff that ends in war or in union. See <a href="#endings">Endings</a> and <a href="#land">Land hunger</a>.</p>
+<p>A full valley split between realms is not an ending: it is a standoff that ends in war or in union. See <a href="#endings">Winning and losing</a> and <a href="#land">Land hunger</a>.</p>
 </section>
 
 <section id="rules">
@@ -156,12 +165,13 @@ section.hide{display:none}
 <ul><li><b>Young people</b> are counted apart until they come of age at 15, then set up a family of their own.</li>
 <li><b>When the head of a family dies</b>, a grown son (10 or older) takes over and the family carries on. With no grown son, the family ends: the widow and children join their kin.</li>
 <li><b>One hut icon is a cluster</b> (huts for 3 families; solid houses for 4), so the map doesn't fill with roofs.</li></ul>
-<p><b>Time:</b> a year has four seasons of 12 days each, so 48 days. Evenings and nights pass quickly because people sleep.</p>
+<p><b>Time:</b> a year has four seasons of 12 days each, so 48 days. Evening and night pass in about a second behind a fade ("Night passes"). Everything in them still happens: work by firelight, ideas, drill, food eaten. Orders you give late in the day are carried on at dawn.</p>
 </section>
 
 <section id="screen">
 <h2>The screen</h2>
-<p>The map fills the middle. Everything else opens and closes from round gold icons on its edges. Click an icon to open its panel; click it again to close it. On each side only one panel is open at a time.</p>
+<p>The map fills the middle. Everything else opens and closes from round gold icons on its edges. Tap an icon to open its panel; tap it again to close it. On a computer the panels open beside the map, one on each side; on a phone they slide up over it (see <a href="#phone">On a phone</a>).</p>
+<figure><img src="guide/12-screen.jpg" alt="The game on a computer: top bar, stores band, the map with gold icons on both edges, Settle and Gather icons at the bottom of the map, and the selected camp's panel on the right" loading="lazy"><figcaption>On a computer. The realm's icons are down the left of the map, the selected camp's down the right, and the king's two actions at the bottom.</figcaption></figure>
 <figure class="dia"><svg viewBox="0 0 760 360" role="img" aria-label="Screen layout: top bar across the top; left edge icons King, Settlements, Messages and War; the map in the centre with the stores band above it; right edge icons Work, Ideas, Build, Settings, Supply and Card with the king's commands at the top of the right panel">
 <g font-family="Inter,system-ui,sans-serif" font-size="13" fill="#efe8dc">
 <rect x="10" y="10" width="740" height="36" rx="6" fill="#262133" stroke="#3a3348"/>
@@ -184,24 +194,71 @@ section.hide{display:none}
 <tr><th>Where</th><th>Button</th><th>What it does</th></tr>
 <tr><td>Top bar</td><td>Pause, 1x, 3x, 5x</td><td>Game speed. 5x is for when things run themselves.</td></tr>
 <tr><td>Top bar</td><td>Skip season</td><td>Fades out, runs to the next season or the next important event (a battle, a disaster, a people forming, a war, an ending), and fades back in.</td></tr>
-<tr><td>Top bar</td><td>Continue</td><td>Picks up the game saved automatically in this browser.</td></tr>
+<tr><td>Top bar</td><td>Continue</td><td>Picks up the game saved automatically in this browser, on whichever map it was played.</td></tr>
 <tr><td>Top bar</td><td>Save / Load</td><td>Downloads the game as a file, or loads one.</td></tr>
+<tr><td>Top bar</td><td>Map</td><td>Chooses the map to play (see <a href="#maps">Maps</a>).</td></tr>
+<tr><td>Top bar</td><td>БГ / EN</td><td>Switches between English and Bulgarian.</td></tr>
 <tr><td>Top bar</td><td>?</td><td>Opens this guide in a new tab.</td></tr>
+<tr><td>Map bottom</td><td><b>Settle</b> / <b>Found</b> (hut and flag)</td><td>Settle your first camp where the king stands; after that, found a new camp of your people. Greyed out when the ground there can't hold a camp. Same as <b>Settle here</b> / <b>Found camp here</b> in the camp panel.</td></tr>
+<tr><td>Map bottom</td><td><b>Explore</b> (eye) / <b>Gather</b> (basket)</td><td>Explore: taps only walk the king. Gather: taps on a resource set him to work it and carry the load home. Tap the icon to switch.</td></tr>
 <tr><td>Map corner</td><td>−, +, Me</td><td>Zoom out, zoom in, and centre on the king.</td></tr>
-<tr><td>Map corner (zoomed out)</td><td>Peoples / Loyalty / Plain</td><td>Colours the land when zoomed out. <b>Peoples:</b> gold for your people, teal for other peoples loyal to the realm, red-brown for camps outside the realm as they were when last seen. <b>Loyalty:</b> realm camps from green (devoted) to red (defiant). <b>Plain:</b> no colours. Only land you have uncovered is coloured, and outside camps appear only once someone of the realm has seen them; what you see of them is from that time.</td></tr>
+<tr><td>Map corner (computer)</td><td>Marks, Shadows</td><td>Resource marks and shadows on or off (see <a href="#marks">Map marks and shadows</a>). On a phone they are in the ☰ menu.</td></tr>
+<tr><td>Map corner (zoomed out)</td><td>Peoples / Loyalty / Plain</td><td>Colours the land when zoomed out, once families are shown as counts. <b>Peoples:</b> gold for your people, teal for other peoples loyal to the realm, red-brown for camps outside the realm as they were when last seen. <b>Loyalty:</b> realm camps from green (devoted) to red (defiant). <b>Plain:</b> no colours. Only land you have uncovered is coloured, and outside camps appear only once someone of the realm has seen them; what you see of them is from that time.</td></tr>
 <tr><td>Map</td><td>Solid and dashed lines</td><td>The solid line is a camp's granted land, which is fixed. The dashed line is how far it reaches to work, which grows.</td></tr>
+<tr><td>Map</td><td>Families or counts</td><td>Zoomed in, every family is drawn. Zoomed further out, each camp shows a count instead and the land is coloured.</td></tr>
 <tr><td>Stores band</td><td>Red numbers</td><td>That store is short.</td></tr>
 </table>
+</section>
+
+<section id="phone">
+<h2>On a phone</h2>
+<p>On a phone the game fills the screen and the page never scrolls. The map takes the space; the panels come to you.</p>
+<div class="phones">
+<figure><img src="guide/m1-start.jpg" alt="Valley on a phone at the start: a thin top bar, the stores line, the map with gold icons and the Settle and Explore icons" loading="lazy"><figcaption>The start. One thin top bar, the stores on one line, the map below.</figcaption></figure>
+<figure><img src="guide/m2-menu.jpg" alt="The phone top bar opened by the menu button, showing Skip season, the counts, the language switch, the guide, Save, Load, Map, Marks and Shadows" loading="lazy"><figcaption>☰ opens everything else, and closes after a choice.</figcaption></figure>
+<figure><img src="guide/m4-sheet.jpg" alt="The King settings panel as a sheet covering the lower part of the phone screen, with the map still visible above" loading="lazy"><figcaption>A panel opens as a sheet over the lower map.</figcaption></figure>
+</div>
+<table>
+<tr><th>Part</th><th>What it does</th></tr>
+<tr><td>Top bar</td><td>The date and time, Pause/1x/3x/5x and <b>☰</b>. <b>Continue</b> sits in the bar when there is a game to pick up.</td></tr>
+<tr><td>☰ menu</td><td>Skip season, the counts of families, camps and peoples, БГ/EN, the guide, Save, Load, Map, Marks and Shadows.</td></tr>
+<tr><td>Stores line</td><td>The selected camp's stores. Swipe it sideways to see them all.</td></tr>
+<tr><td>Icons</td><td>The same icons as on a computer, on the map's edges. Each opens its panel as a <b>sheet</b> sliding up over the lower part of the screen, so the top of the map stays in view.</td></tr>
+<tr><td>Sheets</td><td>Scroll inside the sheet. Close it with <b>✕</b> or the panel's own <b>Close</b>, or tap its icon again. Only one sheet is open at a time.</td></tr>
+<tr><td>Settle and Explore/Gather</td><td>At the bottom of the map, always in reach.</td></tr>
+<tr><td>Message line</td><td>Under the map: the latest thing that happened.</td></tr>
+<tr><td>Touch</td><td>Tap to walk or gather, drag to pan, pinch to zoom.</td></tr>
+</table>
+<div class="tip"><b>Phones start with shadows off</b> for a clearer map; computers start with them on. Either can be changed, and the choice is remembered on that device.</div>
+</section>
+
+<section id="marks">
+<h2>Map marks and shadows</h2>
+<figure class="side"><img src="guide/m9-marks.jpg" alt="Close-up of the map with round marks on berries, game, reeds and stone around the first camp" loading="lazy"><figcaption>Marks around a new camp: berries, game, reeds, stone and fish in the river.</figcaption></figure>
+<p>Every resource you have seen and not used up carries a small round <b>mark</b> with a white ring, so it can be picked out among the trees. A spent patch loses its mark until it grows back. Only surface resources are marked: ore and ochre are never marked, so nothing hidden is given away.</p>
+<table>
+<tr><th>Mark</th><th>Resource</th></tr>
+<tr><td><span class="mk" style="background:#8a2f6a"></span>Purple, berries</td><td>Berries (food)</td></tr>
+<tr><td><span class="mk" style="background:#b8962a"></span>Gold, dot</td><td>Tended plots (food)</td></tr>
+<tr><td><span class="mk" style="background:#2f74a8"></span>Blue, fish</td><td>Fish (food)</td></tr>
+<tr><td><span class="mk" style="background:#7a4f22"></span>Brown, antlers</td><td>Game (hides, and meat)</td></tr>
+<tr><td><span class="mk" style="background:#2f8fbf"></span>Blue, drop</td><td>Spring (water)</td></tr>
+<tr><td><span class="mk" style="background:#6f6c66"></span>Grey, triangle</td><td>Stone</td></tr>
+<tr><td><span class="mk" style="background:#a3622e"></span>Brown, square</td><td>Clay</td></tr>
+<tr><td><span class="mk" style="background:#6b7a24"></span>Olive, stems</td><td>Reeds and tussock (fibre)</td></tr>
+<tr><td><span class="mk" style="background:#9a978c"></span>Grey, grains</td><td>Salt</td></tr>
+</table>
+<p><b>Shadows</b> are the shadows under trees, rocks and people, and the shading painted into the ground on slopes and under forest. With shadows off, the sprites cast none and the ground's dark patches are softened, which makes marks and people easier to see. <b>Marks</b> and <b>Shadows</b> are switched in the map corner on a computer and in the ☰ menu on a phone.</p>
 </section>
 
 <section id="start">
 <h2>Your first camp</h2>
 <figure><img src="guide/01-start.jpg" alt="The opening view: the king on the Three Hills with a dotted outline showing the land a camp would be granted" loading="lazy"><figcaption>The dotted outline follows you and shows the land a camp founded where you stand would be granted. The stores band reads out what it holds.</figcaption></figure>
 <ol class="steps">
-<li><b>Walk the land.</b> You start in <b>Explore</b> mode: taps on the map walk you there.</li>
+<li><b>Walk the land.</b> You start in <b>Explore</b> mode (the gold eye icon at the bottom of the map): taps on the map walk you there.</li>
 <li><b>Choose your ground.</b> A camp needs land that will <b>feed 8 families</b>, with <b>water</b> and <b>wood</b>. Reeds give fibre for huts. Stone, clay and mud nearby decide what your people can build later. Where you settle is the first choice that shapes their culture.</li>
-<li><b>Press Settle here.</b> This becomes your <b>capital</b> (your seat), and its people are your first people.</li>
-<li><b>Gather.</b> Mode switches to <b>Gather</b>. Tap berries, water or trees: the king walks over, works with the king's tool, and carries the load home.</li>
+<li><b>Press Settle</b> (the hut-and-flag icon at the bottom of the map). This becomes your <b>capital</b> (your seat), and its people are your first people. The icon is greyed out where the ground can't hold a camp.</li>
+<li><b>Gather.</b> The mode icon switches to <b>Gather</b> (a basket). Tap berries, water or trees: the king walks over, works with the king's tool, and carries the load home. The round <a href="#marks">marks</a> show where resources are.</li>
 <li><b>Build the Fire (5 wood)</b> in <b>Build</b>. Nobody stays without a fire.</li>
 <li><b>Build huts (10 wood and 4 fibre).</b> One hut icon is a cluster of huts: shelter for 3 families. Wandering families only stay where there is room.</li>
 <li><b>Wanderers arrive at dawn</b> if there is room and food. <b>Next wanderer</b> under Work says what is holding the next one back.</li>
@@ -440,10 +497,40 @@ section.hide{display:none}
 </ul>
 </section>
 
+<section id="warshort">
+<h2>War in short</h2>
+<p>Peace is the normal state. Nobody fights you unless someone comes for you or you march; a culture is only marked <b>warlike</b> by what it does. The rest of this part is the detail; this is the shape of it.</p>
+<h3>Who can come for you</h3>
+<table>
+<tr><th>Who</th><th>When</th><th>More</th></tr>
+<tr><td>Raider bands</td><td>Only if you turn raiders on (War, Watch). Off at the start of every game.</td><td><a href="#bands">Raider bands</a></td></tr>
+<tr><td>Settled strangers</td><td>A band that took one of your camps lives there as its own people. Its chief raids you, and once it is land-hungry and has the numbers it marches.</td><td><a href="#settled">Settled strangers</a>, <a href="#land">Land hunger</a></td></tr>
+<tr><td>Your own councils</td><td>When bad blood between two camps of one people reaches 80. The king does not start or stop it.</td><td><a href="#civil">Civil war</a></td></tr>
+</table>
+<h3>Defend</h3>
+<ol class="steps">
+<li><b>See them coming.</b> Build <b>towers</b> at the edge of your land (Tower here). A tower sees about 6 km and passes the alarm by beacon to towers and camps within 15 km, so defenders are not caught unawares.</li>
+<li><b>Set a levy.</b> In War, set the realm's levy (none, 1 in 10, 1 in 5), or a camp's own in its Settings. The levy share drills in the evenings and reaches basic training in about a year. Townsfolk who are not called still fight at home with their best tools.</li>
+<li><b>Build a fort</b> once your people know <b>Palisades</b> (Build tab, 20 wood and 12 stone). Camps within 12 km, or joined to it by supply links, garrison it in turn, are protected by it (+10 loyalty target) and answer its call to arms.</li>
+<li><b>Pay soldiers</b> once the capital's exchange reaches tokens: hire from people out of work. Wages go home to their camps as income. Unpaid soldiers go home.</li>
+</ol>
+<h3>Attack</h3>
+<p>Raise an army at a fort (a levy can also muster at a council pavilion), then <b>March on</b> a camp from the War tab. You can march on camps that broke away, robber camps, camps of other peoples you have seen, and your own camps held by strangers.</p>
+<table>
+<tr><th>You win against</th><th>What happens</th></tr>
+<tr><td>Your camp held by strangers</td><td>It comes back to the realm under a council, at loyalty 30.</td></tr>
+<tr><td>A stranger camp</td><td>Conquest: it comes under the crown, keeping its people and ways, at loyalty 15 and resentful. That people's favour falls by 40.</td></tr>
+</table>
+<h3>Make peace</h3>
+<p>Most strangers can be won without a fight. Trade with them and send gifts to raise their <b>favour</b>; a band that trades both ways with the realm does not raid it. With favour high and little bad blood, a stranger people joins the crown of its own accord, all its camps at loyalty 50. See <a href="#favour">Trade, favour and joining</a>.</p>
+<h3>Keep the peace at home</h3>
+<p>Civil wars grow from bad blood between your own camps. Ease it before it reaches 80: <b>Mediate</b> on a supply link, <b>Send relief</b> to a camp that is short, <b>Honour</b> a camp that is wavering. See <a href="#crownhand">From the crown</a>.</p>
+</section>
+
 <section id="war">
 <h2>The War tab (crossed swords)</h2>
 <p>Everything military in one place, fourth icon on the left.</p>
-<figure class="side"><img src="guide/13-war.jpg" alt="The War tab showing Threats with Invite back and Send relief buttons, Forces, and the Levies table" loading="lazy"><figcaption>The top of the War tab: threats with the crown's buttons beside them, forces, and the levy table per camp.</figcaption></figure>
+<div class="pair"><figure><img src="guide/13-war.jpg" alt="The War tab on a computer: threats, forces, forts and armies, and the levy table per camp" loading="lazy"><figcaption>On a computer, the War tab opens down the left of the map.</figcaption></figure><figure><img src="guide/m5-war.jpg" alt="The War tab as a sheet on a phone" loading="lazy"><figcaption>On a phone it opens as a sheet; scroll inside it.</figcaption></figure></div>
 <table>
 <tr><th>Section</th><th>What is there</th></tr>
 <tr><td>Threats</td><td>Raiders or strangers seen on the march; camps close to breaking a bond (with <b>Send relief</b>); camps that broke away (with <b>Invite back</b>); camps that have outgrown their land; defiant camps.</td></tr>
@@ -597,8 +684,18 @@ section.hide{display:none}
 </section>
 
 <section id="endings">
-<h2>Endings</h2>
-<p>An ending is a state the valley reaches, never a score. The aim is the first two: a full valley united under the crown (see <a href="#aim">The aim</a>). Each is reached once, written to the chronicle, and opens the end screen. You choose <b>Play on</b> or <b>End the reign</b>.</p>
+<h2>Winning and losing</h2>
+<p>There is no score. A reign ends well when the valley is full and every camp in it answers to the crown. An ending is a state the valley reaches; each is reached once, written to the chronicle, and opens the end screen, where you choose <b>Play on</b> or <b>End the reign</b>.</p>
+<h3>Where a reign can go</h3>
+<table>
+<tr><th>The valley</th><th>Result</th></tr>
+<tr><td>Full, and every camp is of your people (the first settlement, its daughters, and branches that broke away and came back)</td><td><b>Ending: One people fills the valley.</b> The best.</td></tr>
+<tr><td>Full, and every camp answers to the crown, though not all are of one people</td><td><b>Ending: Many peoples, one crown.</b> Also a full success.</td></tr>
+<tr><td>Full, but some camps stand outside the realm (strangers, or camps that broke away)</td><td><b>Not an ending.</b> A standoff: land hunger grows until it ends in war or in union (<a href="#land">Land hunger</a>).</td></tr>
+<tr><td>Every camp of the realm is lost, taken, broken away or abandoned</td><td><b>Ending: No camp answers to the crown.</b> The reign has failed. King settings offers <b>Begin again here</b> or <b>Retire</b>.</td></tr>
+<tr><td>You retire, or end the reign from the end screen</td><td><b>Ending: The king lays down the crown.</b></td></tr>
+</table>
+<p>"Full" means no free ground is left anywhere that could feed a new camp. Map-full endings are checked at each change of season; losing the realm is checked daily.</p>
 <figure class="dia"><svg viewBox="0 0 760 250" role="img" aria-label="Endings: if no camp of the realm is left, No camp answers to the crown. If you retire, The king lays down the crown. If the map is full and every camp is in the realm: one people (by root) gives One people fills the valley; several peoples give Many peoples, one crown. A full map with strangers is not an ending">
 <defs><marker id="ah7" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#e3c27f"/></marker></defs>
 <g font-family="Inter,system-ui,sans-serif" font-size="13" fill="#efe8dc" text-anchor="middle">
@@ -613,14 +710,40 @@ section.hide{display:none}
 <rect x="10" y="168" width="350" height="56" rx="10" fill="#2a1f22" stroke="#ff8a7a"/><text x="185" y="193" font-weight="700" fill="#ff8a7a">No camp answers to the crown</text><text x="185" y="212" font-size="12" fill="#b4a993">checked daily: no camp of the realm left</text>
 <rect x="400" y="168" width="350" height="56" rx="10" fill="#262133" stroke="#3a3348"/><text x="575" y="193" font-weight="700">The king lays down the crown</text><text x="575" y="212" font-size="12" fill="#b4a993">you choose Retire, or End the reign</text>
 </g></svg><figcaption>Map-full endings are checked at each change of season; losing the realm is checked daily.</figcaption></figure>
-<figure><img src="guide/16-end.jpg" alt="The end screen for One people fills the valley, with the land held, the peoples, chronicle entries and the Play on and End the reign buttons" loading="lazy"><figcaption>The end screen. Play on closes it; End the reign retires the king and records the reign.</figcaption></figure>
+<h3>How to win</h3>
+<ol class="steps">
+<li><b>Fill the land.</b> Found camps yourself (the Settle/Found icon) and give councils the <b>mandate</b> to found their own. The King panel shows how much of the dry ground the realm's grants cover.</li>
+<li><b>Keep your camps.</b> Watch loyalty and bad blood. Send relief to camps that are short, honour the wavering, mediate between camps that quarrel, and <b>Invite back</b> any that break away.</li>
+<li><b>Bring the outsiders in.</b> Every camp outside the crown blocks both good endings. Win strangers with trade, gifts and favour until they join; or march on them.</li>
+<li><b>Don't lose the seat.</b> If your capital falls, the king flees to the nearest loyal camp (loyalty 40+, not at war), which becomes the seat, and every camp loses 10 loyalty.</li>
+</ol>
+<h3>How a reign is lost</h3>
 <ul>
-<li><b>One people</b> counts every camp whose people traces back to your founding people, including branches that broke away and came back.</li>
+<li><b>Splits</b> that are never mended: camps break away over bad blood and unmet requests (<a href="#tension">Tension and splits</a>).</li>
+<li><b>Civil wars</b> between your councils, whose losers splinter into new peoples (<a href="#civil">Civil war</a>).</li>
+<li><b>Raids and conquest</b>: bands that take camps and settle in them, then raid and march from there (<a href="#settled">Settled strangers</a>).</li>
+<li><b>Hunger and cold</b> that empty camps (<a href="#seasons">Seasons and disasters</a>).</li>
+</ul>
+<div class="pair"><figure><img src="guide/16-end.jpg" alt="The end screen on a computer for Many peoples, one crown, with years, camps, who holds the land, the peoples and chronicle entries" loading="lazy"><figcaption>The end screen on a computer.</figcaption></figure><figure><img src="guide/m8-end.jpg" alt="The same end screen on a phone" loading="lazy"><figcaption>And on a phone.</figcaption></figure></div>
+<ul>
 <li><b>The end screen</b> shows years, camps, people, ideas known and battles; who holds the land; each people's camps and population; endings reached; and the last major chronicle entries. Nothing on it is a score.</li>
-<li><b>End the reign</b> retires the king and saves a record of the reign in this browser, then offers <b>Watch the valley</b> or <b>Start a new game</b>.</li>
+<li><b>Play on</b> closes it: you can still reach another ending. <b>End the reign</b> retires the king and saves a record of the reign in this browser, then offers <b>Watch the valley</b> or <b>Start a new game</b>.</li>
 <li>The king does not age or die: he is symbolic. The settlements of the realm are what matter.</li>
 </ul>
 <div class="tip"><b>From test runs:</b> a peaceful valley about 4% the size of the map filled in about 17 years and reached "One people fills the valley" in year 39, once every split camp had come back. With raiders on and an autopilot king who never raised an army, the realm was lost in year 35.</div>
+</section>
+
+<section id="maps">
+<h2>Maps</h2>
+<figure class="side"><img src="guide/m7-maps.jpg" alt="The Map chooser on a phone, showing Plovdiv in use and the Open a map file button" loading="lazy"><figcaption>The Map chooser.</figcaption></figure>
+<p>Valley plays on real ground. <b>Plovdiv</b> (60 × 45 km at 100 m a tile) is built in, and more maps are released as map files.</p>
+<ul>
+<li><b>Map</b> (top bar, or ☰ on a phone) lists Plovdiv, the maps published on the site, and maps already opened on this device.</li>
+<li><b>Open a map file…</b> loads a <code>.valleymap</code> file you have downloaded; it is then kept on this device.</li>
+<li>A shared link can open a map directly.</li>
+<li>Changing map reloads the page. Your game is autosaved first, and <b>Continue</b> takes you back to it on its own map.</li>
+<li>Every save remembers its map. Loading a save made on another map switches to that map first.</li>
+</ul>
 </section>
 
 <section id="saving">
@@ -629,6 +752,7 @@ section.hide{display:none}
 <li>The game saves itself in your browser every few minutes and at each change of season. <b>Continue</b> in the top bar picks it up.</li>
 <li><b>Save</b> downloads the game as a file; <b>Load</b> opens one, on any device.</li>
 <li>Saves from older versions still load: new features are added as optional data.</li>
+<li>Each save remembers which map it was played on (see <a href="#maps">Maps</a>).</li>
 </ul>
 <p><b>Visit counts:</b> the live site counts visits and a few game milestones (opening the game, founding a first camp, forming a council, reaching an ending, switching language) with GoatCounter. It uses no cookies and records nothing personal: only totals, with country, browser and screen size.</p>
 </section>
