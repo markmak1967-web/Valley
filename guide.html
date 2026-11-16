@@ -183,7 +183,7 @@ section{scroll-margin-top:70px}
 <rect x="216" y="56" width="328" height="26" rx="5" fill="#262133" stroke="#3a3348"/><text x="380" y="74" text-anchor="middle" font-size="12">Stores band: what the selected camp holds</text>
 <rect x="216" y="88" width="328" height="262" rx="6" fill="#20301f" stroke="#3a3348"/>
 <text x="380" y="200" text-anchor="middle" fill="#cfe0c0">MAP</text><text x="380" y="220" text-anchor="middle" font-size="12" fill="#b4c7a8">drag to pan, scroll or pinch to zoom</text>
-<text x="226" y="106" font-size="12" fill="#b4c7a8">− + Me</text>
+<text x="226" y="106" font-size="12" fill="#b4c7a8">− + Topo Me</text>
 <g fill="#e3c27f"><circle cx="562" cy="100" r="11"/><circle cx="562" cy="130" r="11"/><circle cx="562" cy="160" r="11"/><circle cx="562" cy="190" r="11"/><circle cx="562" cy="220" r="11"/><circle cx="562" cy="250" r="11"/></g>
 <rect x="580" y="56" width="170" height="294" rx="6" fill="#1e1a28" stroke="#3a3348"/>
 <text x="665" y="76" text-anchor="middle" fill="#b4a993" font-size="12">RIGHT PANEL (a camp)</text>
@@ -222,6 +222,7 @@ section{scroll-margin-top:70px}
 <tr><th>Part</th><th>What it does</th></tr>
 <tr><td>Top bar</td><td>The date and time, Pause/1x/3x/5x and <b>☰</b>. <b>Continue</b> sits in the bar when there is a game to pick up.</td></tr>
 <tr><td>☰ menu</td><td>Skip season, the counts of families, camps and peoples, БГ/EN, the guide, Save, Load, Map, Marks and Shadows.</td></tr>
+<tr><td>Map buttons</td><td><b>−</b>, <b>+</b>, <b>Topo</b> and <b>Me</b> in the top-left corner of the map, with <b>Peoples</b> on a second row when zoomed out, clear of the small overview map.</td></tr>
 <tr><td>Stores line</td><td>The selected camp's stores. Swipe it sideways to see them all.</td></tr>
 <tr><td>Icons</td><td>The same icons as on a computer, on the map's edges. Each opens its panel as a <b>sheet</b> sliding up over the lower part of the screen, so the top of the map stays in view.</td></tr>
 <tr><td>Sheets</td><td>Scroll inside the sheet. Close it with <b>✕</b> or the panel's own <b>Close</b>, or tap its icon again. Only one sheet is open at a time.</td></tr>
@@ -251,6 +252,30 @@ section{scroll-margin-top:70px}
 <p><b>Shadows</b> are the shadows under trees, rocks and people, and the shading painted into the ground on slopes and under forest. With shadows off, the sprites cast none and the ground's dark patches are softened, which makes marks and people easier to see. <b>Marks</b> and <b>Shadows</b> are switched in the map corner on a computer and in the ☰ menu on a phone.</p>
 </section>
 
+<section id="views">
+<h2>Map views: texture, Topo and the old map</h2>
+<p>The land can be drawn three ways. All three are drawn from the real ground of the map, so hills, rivers and forest are where they really are.</p>
+<ul>
+<li><b>Texture</b> (the usual view): painted ground with trees, rocks and people. Hills are shaded from the north-west, with their height exaggerated two and a half times so low hills still stand out. Rivers are drawn at their true width, and never thinner than a line you can see.</li>
+<li><b>Topo</b>: press <b>Topo</b> beside <b>−</b> and <b>+</b> in the top-left corner of the map. The ground turns to light colours for each kind of land cover (grass, woodland, pine, scrub, wetland, rock), with grey hill shading and brown contour lines: a thin line every 10 m and a bold one every 50 m when you are zoomed in. Press <b>Topo</b> again to go back. The game remembers your choice. The map takes a few seconds to redraw, starting from the middle of the view.</li>
+<li><b>The old map</b>: zoom well out and the land turns into an inked map on parchment. Mountain and hill symbols stand where the ground is high and rough, small trees mark woodland, tufts mark marsh, the great river is a ribbon and streams are ink lines. Land nobody has seen yet is blank parchment, and it fills in as you explore. Zoom back in to return to texture or Topo.</li>
+</ul>
+<figure><img src="guide/17-topo.jpg" alt="The Topo view around the Three Hills: light land-cover colours, grey hill shading and brown contour lines rising around the hill" loading="lazy"><figcaption>Topo around the Three Hills. The contours close round the hill, and the river runs through the low ground.</figcaption></figure>
+<figure><img src="guide/18-oldmap.jpg" alt="The old map zoomed right out: parchment with mountain symbols in the south, woodland symbols, the river across the middle and streams joining it" loading="lazy"><figcaption>The whole map in the old style, with everything explored. The Rhodope mountains rise in the south.</figcaption></figure>
+<p>On the old map, settlements and roads are drawn as an old map would show them:</p>
+<table>
+<tr><th>On the map</th><th>Means</th></tr>
+<tr><td>Two tents</td><td>A camp, newly settled</td></tr>
+<tr><td>A few houses</td><td>A village: the camp has its own council</td></tr>
+<tr><td>Houses with a banner</td><td>A town: its people hold the mandate to expand, and it has founded a settlement of its own</td></tr>
+<tr><td>Walls and towers round it</td><td>The settlement has a fort</td></tr>
+<tr><td>A small walled square</td><td>An outpost</td></tr>
+<tr><td>Grey dashes</td><td>A way worn by people walking it, finer for a track and heavier for a well-used way</td></tr>
+<tr><td>Solid grey line</td><td>A cobbled road</td></tr>
+</table>
+<figure><img src="guide/19-oldtowns.jpg" alt="The old map with a walled town, a village, a fortified village and a camp, each named in serif lettering" loading="lazy"><figcaption>A walled town (the capital, marked *), a village, a camp and a fortified village. The number of families shows under each name when you are not zoomed right out.</figcaption></figure>
+<p>No roads are drawn in advance. Ways appear where your people actually walk, and grow from a faint track to a worn way the more they are used.</p>
+</section>
 <section id="start">
 <h2>Your first camp</h2>
 <figure><img src="guide/01-start.jpg" alt="The opening view: the king on the Three Hills with a dotted outline showing the land a camp would be granted" loading="lazy"><figcaption>The dotted outline follows you and shows the land a camp founded where you stand would be granted. The stores band reads out what it holds.</figcaption></figure>
@@ -273,6 +298,7 @@ section{scroll-margin-top:70px}
 <figure class="side"><img src="guide/06-family.jpg" alt="The Settings panel showing the Family council row with its Form button" loading="lazy"><figcaption>At 6 families, open <b>Settings</b> and press <b>Form</b> beside Family council.</figcaption></figure>
 <p>When the council forms:</p>
 <ul>
+<li><b>The camp becomes a village.</b> The game marks it in the log and on the old map. Its standing shows at the top of its details in the <b>Card</b> panel.</li>
 <li><b>The camp gets its real name</b> from the Bulgarian register of the village whose land it holds (for example Plovdiv, &#1055;&#1083;&#1086;&#1074;&#1076;&#1080;&#1074;). You can rename it later with the pencil beside its name. Renaming the capital renames its people.</li>
 <li><b>The people get their name</b> and their <b>culture card</b> begins.</li>
 <li><b>The council runs the jobs</b> and <b>builds</b> to the best way it knows, and decides its own <b>supply</b>.</li>
@@ -415,6 +441,7 @@ section{scroll-margin-top:70px}
 <h2>Settlements (houses)</h2>
 <figure class="side"><img src="guide/09-settlements.jpg" alt="The Settlements panel" loading="lazy"><figcaption>Every camp, its people, population, food and loyalty.</figcaption></figure>
 <p>A table of every camp: its people, population, days of food, <b>Loyal</b> (its loyalty to the crown in a word), and what it is doing. Camps outside the realm show <b>own realm</b>. Tap a row to select the camp. <b>View cards</b> opens the carousel of this game's peoples.</p>
+<p><b>Standing.</b> Every settlement is a <b>camp</b> when first settled, a <b>village</b> once it has a council, and a <b>town</b> once its people hold the mandate to expand and it has founded a settlement of its own. A town whose founded settlements are all lost goes back to being a village. The log tells you when a settlement rises, and the old map draws each one by its standing (see <a href="#views">Map views</a>).</p>
 </section>
 
 <section id="messages">
