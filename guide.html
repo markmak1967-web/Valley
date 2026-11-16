@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>(function(){try{var q=location.search;if(/[?&]lang=bg\b/.test(q)||(!/[?&]lang=en\b/.test(q)&&localStorage.getItem('valley.lang')==='bg'))location.replace('guide-bg.html'+location.hash);else if(/[?&]lang=en\b/.test(q))localStorage.setItem('valley.lang','en');}catch(e){}})();</script>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Valley: the guide</title>
@@ -57,10 +59,12 @@ section.hide{display:none}
 .nohit{display:none;color:#b4a993;margin-top:30px}
 section{scroll-margin-top:70px}
 @media(max-width:860px){header{position:static}section{scroll-margin-top:8px}.wrap{grid-template-columns:1fr}aside{position:static;height:auto;border-right:0;border-bottom:1px solid #2c2638;columns:2}main{padding:20px 18px 80px}figure.side{flex-direction:column}figure.side img{width:100%}header input{margin-left:0;width:100%}}
+header .lng{color:#e3c27f;text-decoration:none;border:1px solid #3a3348;border-radius:8px;padding:6px 10px;font-size:14px}
+header .lsw{display:inline-flex;gap:4px}header .lsw a{display:inline-flex;align-items:center;gap:5px;height:34px;padding:0 9px;border-radius:17px;border:2px solid #3a3348;color:#b4a993;text-decoration:none;font-weight:700;font-size:13px;opacity:.75}header .lsw a:hover{opacity:1;border-color:#e3c27f}header .lsw a.on{border-color:#e3c27f;color:#e3c27f;opacity:1}header .lsw .fl{width:22px;height:14px;border-radius:2px;display:block;box-shadow:0 0 0 1px rgba(0,0,0,.4)}
 </style>
 </head>
 <body>
-<header><span class="brand">VALLEY</span><span class="sub">The guide</span><input id="q" type="search" placeholder="Search the guide (e.g. levy, favour, relief)"><a class="play" href="index.html">Play</a></header>
+<header><span class="brand">VALLEY</span><span class="sub">The guide</span><input id="q" type="search" placeholder="Search the guide (e.g. levy, favour, relief)"><a class="play" href="index.html?lang=en">Play</a><span class="lsw" role="group" aria-label="Language / Език"><a href="guide.html?lang=en" lang="en" title="English" aria-label="English" class="on" aria-current="page"><svg class="fl" viewBox="0 0 60 30" aria-hidden="true"><clipPath id="ukc"><path d="M0,0v30h60V0z"/></clipPath><clipPath id="ukt"><path d="M30,15h30v15zv15H0zH0V0zV0h30z"/></clipPath><g clip-path="url(#ukc)"><path d="M0,0v30h60V0z" fill="#012169"/><path d="M0,0 60,30M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30M60,0 0,30" clip-path="url(#ukt)" stroke="#C8102E" stroke-width="4"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></g></svg>EN</a><a href="guide-bg.html" lang="bg" title="Български" aria-label="Български" onclick="try{localStorage.setItem('valley.lang','bg')}catch(e){}"><svg class="fl" viewBox="0 0 5 3" aria-hidden="true"><rect width="5" height="1" fill="#fff"/><rect y="1" width="5" height="1" fill="#00966E"/><rect y="2" width="5" height="1" fill="#D62612"/></svg>БГ</a></span></header>
 <div class="wrap">
 <aside id="toc">
  <div class="grp">Start here</div>
@@ -811,7 +815,7 @@ section{scroll-margin-top:70px}
 <tr><td>Tokens / the bank</td><td>Currency, once the realm uses it, and the crown's holding of it.</td></tr>
 <tr><td>Warlike</td><td>A camp that has taken by force; others remember it.</td></tr>
 </table>
-<a class="play" href="index.html">Play Valley</a>
+<a class="play" href="index.html?lang=en">Play Valley</a>
 </section>
 </main>
 </div>
